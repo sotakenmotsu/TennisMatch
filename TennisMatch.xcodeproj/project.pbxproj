@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2A6D5AEE500EE709D27CFADE /* Pods_TennisMatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C37CC61072D18043C8B5BA4 /* Pods_TennisMatchUITests.framework */; };
 		A82FD7481B5AB19B134998D5 /* Pods_TennisMatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E925710823AC3CA9713E22 /* Pods_TennisMatchTests.framework */; };
+		C539872C21BA7BF000DAEEC8 /* blue-blurred-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C539872B21BA7BF000DAEEC8 /* blue-blurred-background.jpg */; };
+		C539873021BA86D900DAEEC8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C539872F21BA86D900DAEEC8 /* Login.storyboard */; };
 		C5DA53DF219EDB950022A3B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA53DE219EDB950022A3B6 /* AppDelegate.swift */; };
 		C5DA53E4219EDB950022A3B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5DA53E2219EDB950022A3B6 /* Main.storyboard */; };
 		C5DA53E6219EDB960022A3B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5DA53E5219EDB960022A3B6 /* Assets.xcassets */; };
@@ -16,9 +18,7 @@
 		C5DA53F4219EDB960022A3B6 /* TennisMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA53F3219EDB960022A3B6 /* TennisMatchTests.swift */; };
 		C5DA53FF219EDB960022A3B6 /* TennisMatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA53FE219EDB960022A3B6 /* TennisMatchUITests.swift */; };
 		C5DA540D219EDD1A0022A3B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5DA540C219EDD1A0022A3B6 /* GoogleService-Info.plist */; };
-		C5DA540F219EDE0A0022A3B6 /* blue-blurred-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5DA540E219EDE0A0022A3B6 /* blue-blurred-background.jpg */; };
 		C5DA5411219EDFBA0022A3B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA5410219EDFBA0022A3B6 /* LoginViewController.swift */; };
-		C5DA5413219EDFC80022A3B6 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA5412219EDFC80022A3B6 /* SigninViewController.swift */; };
 		C5DA5415219EE0010022A3B6 /* InviteContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA5414219EE0010022A3B6 /* InviteContentsViewController.swift */; };
 		C5DA5417219EE00A0022A3B6 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA5416219EE00A0022A3B6 /* PostViewController.swift */; };
 		C5DA5419219EE0240022A3B6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA5418219EE0240022A3B6 /* SearchViewController.swift */; };
@@ -53,6 +53,8 @@
 		894B4B3705FE66EFA6AF0194 /* Pods-TennisMatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisMatchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisMatchTests/Pods-TennisMatchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		92E925710823AC3CA9713E22 /* Pods_TennisMatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisMatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1B441FA534F1267A86F3399 /* Pods-TennisMatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisMatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisMatch/Pods-TennisMatch.debug.xcconfig"; sourceTree = "<group>"; };
+		C539872B21BA7BF000DAEEC8 /* blue-blurred-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "blue-blurred-background.jpg"; sourceTree = SOURCE_ROOT; };
+		C539872F21BA86D900DAEEC8 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		C55AB7E921B14C0C00AD84E0 /* TennisMatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TennisMatch.entitlements; sourceTree = "<group>"; };
 		C5DA53DB219EDB950022A3B6 /* TennisMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DA53DE219EDB950022A3B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,9 +69,7 @@
 		C5DA53FE219EDB960022A3B6 /* TennisMatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisMatchUITests.swift; sourceTree = "<group>"; };
 		C5DA5400219EDB960022A3B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5DA540C219EDD1A0022A3B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		C5DA540E219EDE0A0022A3B6 /* blue-blurred-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "blue-blurred-background.jpg"; path = "../../School_motsuken_Shirokane/TennisBB/barbuttonicon/icons/blue-blurred-background.jpg"; sourceTree = "<group>"; };
 		C5DA5410219EDFBA0022A3B6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		C5DA5412219EDFC80022A3B6 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		C5DA5414219EE0010022A3B6 /* InviteContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteContentsViewController.swift; sourceTree = "<group>"; };
 		C5DA5416219EE00A0022A3B6 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		C5DA5418219EE0240022A3B6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -158,9 +158,9 @@
 			children = (
 				C55AB7E921B14C0C00AD84E0 /* TennisMatch.entitlements */,
 				C5DA53E2219EDB950022A3B6 /* Main.storyboard */,
+				C539872F21BA86D900DAEEC8 /* Login.storyboard */,
 				C5DA53DE219EDB950022A3B6 /* AppDelegate.swift */,
 				C5DA5410219EDFBA0022A3B6 /* LoginViewController.swift */,
-				C5DA5412219EDFC80022A3B6 /* SigninViewController.swift */,
 				C5DA5414219EE0010022A3B6 /* InviteContentsViewController.swift */,
 				C5DA5416219EE00A0022A3B6 /* PostViewController.swift */,
 				C5DA5418219EE0240022A3B6 /* SearchViewController.swift */,
@@ -168,10 +168,10 @@
 				C5DA541C219EE0690022A3B6 /* JoinViewController.swift */,
 				C5DA541E219EE0870022A3B6 /* Post.swift */,
 				C5DA53E5219EDB960022A3B6 /* Assets.xcassets */,
+				C539872B21BA7BF000DAEEC8 /* blue-blurred-background.jpg */,
 				C5DA53E7219EDB960022A3B6 /* LaunchScreen.storyboard */,
 				C5DA53EA219EDB960022A3B6 /* Info.plist */,
 				C5DA540C219EDD1A0022A3B6 /* GoogleService-Info.plist */,
-				C5DA540E219EDE0A0022A3B6 /* blue-blurred-background.jpg */,
 			);
 			path = TennisMatch;
 			sourceTree = "<group>";
@@ -206,6 +206,7 @@
 				C5DA53D8219EDB950022A3B6 /* Frameworks */,
 				C5DA53D9219EDB950022A3B6 /* Resources */,
 				3E6D35DC76D49785ABCE339C /* [CP] Embed Pods Frameworks */,
+				3FC25F9ED11D4243244CB7F6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -309,7 +310,8 @@
 			files = (
 				C5DA53E9219EDB960022A3B6 /* LaunchScreen.storyboard in Resources */,
 				C5DA540D219EDD1A0022A3B6 /* GoogleService-Info.plist in Resources */,
-				C5DA540F219EDE0A0022A3B6 /* blue-blurred-background.jpg in Resources */,
+				C539873021BA86D900DAEEC8 /* Login.storyboard in Resources */,
+				C539872C21BA7BF000DAEEC8 /* blue-blurred-background.jpg in Resources */,
 				C5DA53E6219EDB960022A3B6 /* Assets.xcassets in Resources */,
 				C5DA53E4219EDB950022A3B6 /* Main.storyboard in Resources */,
 			);
@@ -357,7 +359,9 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TennisMatch/Pods-TennisMatch-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -365,7 +369,9 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -374,6 +380,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TennisMatch/Pods-TennisMatch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FC25F9ED11D4243244CB7F6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TennisMatch/Pods-TennisMatch-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TennisMatch/Pods-TennisMatch-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C3F1F38B4448F9FBFB6B66FD /* [CP] Check Pods Manifest.lock */ = {
@@ -422,7 +446,6 @@
 				C5DA5417219EE00A0022A3B6 /* PostViewController.swift in Sources */,
 				C5DA5419219EE0240022A3B6 /* SearchViewController.swift in Sources */,
 				C5DA541B219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift in Sources */,
-				C5DA5413219EDFC80022A3B6 /* SigninViewController.swift in Sources */,
 				C5DA541D219EE0690022A3B6 /* JoinViewController.swift in Sources */,
 				C5DA5411219EDFBA0022A3B6 /* LoginViewController.swift in Sources */,
 				C5DA53DF219EDB950022A3B6 /* AppDelegate.swift in Sources */,
