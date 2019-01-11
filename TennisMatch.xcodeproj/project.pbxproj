@@ -18,13 +18,14 @@
 		C5DA53F4219EDB960022A3B6 /* TennisMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA53F3219EDB960022A3B6 /* TennisMatchTests.swift */; };
 		C5DA53FF219EDB960022A3B6 /* TennisMatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA53FE219EDB960022A3B6 /* TennisMatchUITests.swift */; };
 		C5DA540D219EDD1A0022A3B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5DA540C219EDD1A0022A3B6 /* GoogleService-Info.plist */; };
-		C5DA5411219EDFBA0022A3B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA5410219EDFBA0022A3B6 /* LoginViewController.swift */; };
 		C5DA5415219EE0010022A3B6 /* InviteContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA5414219EE0010022A3B6 /* InviteContentsViewController.swift */; };
 		C5DA5417219EE00A0022A3B6 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA5416219EE00A0022A3B6 /* PostViewController.swift */; };
 		C5DA5419219EE0240022A3B6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA5418219EE0240022A3B6 /* SearchViewController.swift */; };
 		C5DA541B219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA541A219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift */; };
 		C5DA541D219EE0690022A3B6 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA541C219EE0690022A3B6 /* JoinViewController.swift */; };
 		C5DA541F219EE0870022A3B6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA541E219EE0870022A3B6 /* Post.swift */; };
+		C5F831FD21E8989F0048AEFF /* TestLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F831FC21E8989F0048AEFF /* TestLoginViewController.swift */; };
+		C5F831FF21E8B14A0048AEFF /* LoginViewControllerS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F831FE21E8B14A0048AEFF /* LoginViewControllerS.swift */; };
 		DFDBDB84A63F8B256F923147 /* Pods_TennisMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6364B585C1B103359F92075 /* Pods_TennisMatch.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,13 +70,14 @@
 		C5DA53FE219EDB960022A3B6 /* TennisMatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisMatchUITests.swift; sourceTree = "<group>"; };
 		C5DA5400219EDB960022A3B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5DA540C219EDD1A0022A3B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		C5DA5410219EDFBA0022A3B6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C5DA5414219EE0010022A3B6 /* InviteContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteContentsViewController.swift; sourceTree = "<group>"; };
 		C5DA5416219EE00A0022A3B6 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		C5DA5418219EE0240022A3B6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C5DA541A219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		C5DA541C219EE0690022A3B6 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		C5DA541E219EE0870022A3B6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		C5F831FC21E8989F0048AEFF /* TestLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoginViewController.swift; sourceTree = "<group>"; };
+		C5F831FE21E8B14A0048AEFF /* LoginViewControllerS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerS.swift; sourceTree = "<group>"; };
 		EF1889851E0116FE6415377F /* Pods-TennisMatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisMatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisMatch/Pods-TennisMatch.release.xcconfig"; sourceTree = "<group>"; };
 		F6364B585C1B103359F92075 /* Pods_TennisMatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisMatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -159,8 +161,9 @@
 				C55AB7E921B14C0C00AD84E0 /* TennisMatch.entitlements */,
 				C5DA53E2219EDB950022A3B6 /* Main.storyboard */,
 				C539872F21BA86D900DAEEC8 /* Login.storyboard */,
+				C5F831FC21E8989F0048AEFF /* TestLoginViewController.swift */,
 				C5DA53DE219EDB950022A3B6 /* AppDelegate.swift */,
-				C5DA5410219EDFBA0022A3B6 /* LoginViewController.swift */,
+				C5F831FE21E8B14A0048AEFF /* LoginViewControllerS.swift */,
 				C5DA5414219EE0010022A3B6 /* InviteContentsViewController.swift */,
 				C5DA5416219EE00A0022A3B6 /* PostViewController.swift */,
 				C5DA5418219EE0240022A3B6 /* SearchViewController.swift */,
@@ -444,10 +447,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5DA5417219EE00A0022A3B6 /* PostViewController.swift in Sources */,
+				C5F831FD21E8989F0048AEFF /* TestLoginViewController.swift in Sources */,
+				C5F831FF21E8B14A0048AEFF /* LoginViewControllerS.swift in Sources */,
 				C5DA5419219EE0240022A3B6 /* SearchViewController.swift in Sources */,
 				C5DA541B219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift in Sources */,
 				C5DA541D219EE0690022A3B6 /* JoinViewController.swift in Sources */,
-				C5DA5411219EDFBA0022A3B6 /* LoginViewController.swift in Sources */,
 				C5DA53DF219EDB950022A3B6 /* AppDelegate.swift in Sources */,
 				C5DA5415219EE0010022A3B6 /* InviteContentsViewController.swift in Sources */,
 				C5DA541F219EE0870022A3B6 /* Post.swift in Sources */,

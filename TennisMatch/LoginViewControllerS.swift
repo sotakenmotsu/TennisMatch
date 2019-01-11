@@ -1,9 +1,9 @@
 //
-//  LoginViewController.swift
+//  LoginViewControllerS.swift
 //  TennisMatch
 //
-//  Created by 剱物蒼太 on 2018/11/16.
-//  Copyright © 2018年 剱物蒼太. All rights reserved.
+//  Created by 剱物蒼太 on 2019/01/11.
+//  Copyright © 2019年 剱物蒼太. All rights reserved.
 //
 
 import UIKit
@@ -13,7 +13,7 @@ import Firebase
 import GoogleSignIn
 
 
-class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GIDSignInDelegate {
+class LoginViewControllerS: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GIDSignInDelegate {
     
     lazy var user = Auth.auth().currentUser
     let userDefaults = UserDefaults.standard
@@ -60,9 +60,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                     return
                 }
                 print("ログイン成功")
-                //            self.userDefaults.set(authentication?.idToken, forKey: "idToken")
-                //            self.userDefaults.set(authentication?.accessToken, forKey: "accessToken")
-                //            self.showAlert()
+//                self.userDefaults.set(authentication.idToken, forKey: "idToken")
+//                self.userDefaults.set(authentication.accessToken, forKey: "accessToken")
+//                self.showAlert()
             }
         }
     }
