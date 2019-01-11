@@ -23,9 +23,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
         
         GIDSignIn.sharedInstance()?.uiDelegate = self
         GIDSignIn.sharedInstance()?.delegate = self
-        
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func tapGoogleSignIn(_ sender: Any) {
@@ -38,8 +36,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     }
     
     func showAlert() {
-        let alert = UIAlertController(title: "登録しました", message:"", preferredStyle: UIAlertController.Style.alert)
-        let ok = UIAlertAction(title: "始める", style: UIAlertAction.Style.default){ (action: UIAlertAction) in
+        let alert = UIAlertController(title: "登録完了", message:"", preferredStyle: UIAlertController.Style.alert)
+        let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default){ (action: UIAlertAction) in
             self.toUserNameView()
         }
         alert.addAction(ok)
@@ -47,15 +45,16 @@ class SignInViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let error = error {
-            print("Error: \(error.localizedDescription)")
+        if let _error = error {
+            print("Error: \(_error.localizedDescription)")
             return
         }
         let authentication = user.authentication
         let credential = GoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!, accessToken: (authentication?.accessToken)!)
-        Auth.auth().signIn(with: credential) { (user, error) in
+        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
             print("ログイン成功")
-//            self.userDefaults.set(credential, forKey: "token")
+            self.userDefaults.set(authentication?.idToken, forKey: "idToken")
+            self.userDefaults.set(authentication?.accessToken, forKey: "accessToken")
             self.showAlert()
         }
     }

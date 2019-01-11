@@ -31,10 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         
         
+//        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+//        GIDSignIn.sharedInstance().delegate = self
+        
         let notificationSettings = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil)
         application.registerUserNotificationSettings(notificationSettings)
         
-    
+//        FirebaseApp.configure()
         return true
     }
 
