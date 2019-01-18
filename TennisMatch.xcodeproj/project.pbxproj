@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2A6D5AEE500EE709D27CFADE /* Pods_TennisMatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C37CC61072D18043C8B5BA4 /* Pods_TennisMatchUITests.framework */; };
 		A82FD7481B5AB19B134998D5 /* Pods_TennisMatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E925710823AC3CA9713E22 /* Pods_TennisMatchTests.framework */; };
+		C5191B4521EB73000013A7C4 /* UserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5191B4421EB73000013A7C4 /* UserNameViewController.swift */; };
 		C539872C21BA7BF000DAEEC8 /* blue-blurred-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C539872B21BA7BF000DAEEC8 /* blue-blurred-background.jpg */; };
 		C539873021BA86D900DAEEC8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C539872F21BA86D900DAEEC8 /* Login.storyboard */; };
 		C5DA53DF219EDB950022A3B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA53DE219EDB950022A3B6 /* AppDelegate.swift */; };
@@ -54,6 +55,7 @@
 		894B4B3705FE66EFA6AF0194 /* Pods-TennisMatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisMatchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisMatchTests/Pods-TennisMatchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		92E925710823AC3CA9713E22 /* Pods_TennisMatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisMatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1B441FA534F1267A86F3399 /* Pods-TennisMatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisMatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisMatch/Pods-TennisMatch.debug.xcconfig"; sourceTree = "<group>"; };
+		C5191B4421EB73000013A7C4 /* UserNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameViewController.swift; sourceTree = "<group>"; };
 		C539872B21BA7BF000DAEEC8 /* blue-blurred-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "blue-blurred-background.jpg"; sourceTree = SOURCE_ROOT; };
 		C539872F21BA86D900DAEEC8 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		C55AB7E921B14C0C00AD84E0 /* TennisMatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TennisMatch.entitlements; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				C5F831FC21E8989F0048AEFF /* TestLoginViewController.swift */,
 				C5DA53DE219EDB950022A3B6 /* AppDelegate.swift */,
 				C5F831FE21E8B14A0048AEFF /* LoginViewControllerS.swift */,
+				C5191B4421EB73000013A7C4 /* UserNameViewController.swift */,
 				C5DA5414219EE0010022A3B6 /* InviteContentsViewController.swift */,
 				C5DA5416219EE00A0022A3B6 /* PostViewController.swift */,
 				C5DA5418219EE0240022A3B6 /* SearchViewController.swift */,
@@ -450,6 +453,7 @@
 				C5F831FD21E8989F0048AEFF /* TestLoginViewController.swift in Sources */,
 				C5F831FF21E8B14A0048AEFF /* LoginViewControllerS.swift in Sources */,
 				C5DA5419219EE0240022A3B6 /* SearchViewController.swift in Sources */,
+				C5191B4521EB73000013A7C4 /* UserNameViewController.swift in Sources */,
 				C5DA541B219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift in Sources */,
 				C5DA541D219EE0690022A3B6 /* JoinViewController.swift in Sources */,
 				C5DA53DF219EDB950022A3B6 /* AppDelegate.swift in Sources */,

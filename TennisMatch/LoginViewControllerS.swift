@@ -17,7 +17,8 @@ class LoginViewControllerS: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     
     lazy var user = Auth.auth().currentUser
     let userDefaults = UserDefaults.standard
-    var checker = false
+    var ref: DatabaseReference!
+//    var checker = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,8 @@ class LoginViewControllerS: UIViewController, UITextFieldDelegate, GIDSignInUIDe
         GIDSignIn.sharedInstance()?.uiDelegate = self
         GIDSignIn.sharedInstance()?.delegate = self
         //        GIDSignIn.sharedInstance()?.signIn()
+        
+        ref = Database.database().reference()
     }
     
     @IBAction func tapGoogleSignIn(_ sender: Any) {
@@ -32,8 +35,9 @@ class LoginViewControllerS: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     }
     
     func toUserNameView() {
-        let toUserNameView = storyboard!.instantiateViewController(withIdentifier: "usernameview")
-        self.present(toUserNameView, animated: true, completion: nil)
+//        let toUserNameView = storyboard!.instantiateViewController(withIdentifier: "usernameview")
+//        self.present(toUserNameView, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "toUserNameView", sender: nil)
     }
     
     func showAlert() {
@@ -46,24 +50,21 @@ class LoginViewControllerS: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if checker == false{
-            checker = true
-            
-            if let _error = error {
-                print("Error: \(_error.localizedDescription)")
-                return
-            }
-            guard let authentication = user.authentication else { return }
-            let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-                if let error = error {
-                    return
-                }
-                print("ログイン成功")
-//                self.userDefaults.set(authentication.idToken, forKey: "idToken")
-//                self.userDefaults.set(authentication.accessToken, forKey: "accessToken")
-//                self.showAlert()
-            }
+//        if checker == false{
+//            checker = true
+        
+        if let _error = error {
+            print("Error: \(_error.localizedDescription)")
+            return
+        }
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+            print("ログイン成功")
+            self.userDefaults.set(authentication.idToken, forKey: "idToken")
+            self.userDefaults.set(authentication.accessToken, forKey: "accessToken")
+//            self.ref.child("User").child(authentication.idToken)
+            self.showAlert()
         }
     }
     

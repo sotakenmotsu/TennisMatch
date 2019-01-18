@@ -38,10 +38,10 @@
             </objects>
             <point key="canvasLocation" x="-2431" y="-1321"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Login View ControllerS-->
         <scene sceneID="Wav-ev-PVF">
             <objects>
-                <viewController id="5Ev-NV-Cqd" customClass="LoginViewController" customModule="TennisMatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5Ev-NV-Cqd" customClass="LoginViewControllerS" customModule="TennisMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2pa-8Y-Ue9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,7 +55,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <action selector="tapGoogleSignIn:" destination="5Ev-NV-Cqd" eventType="touchUpInside" id="BNC-kd-qBQ"/>
+                                    <action selector="tapGoogleSignIn:" destination="5Ev-NV-Cqd" eventType="touchUpInside" id="a5w-0o-o5A"/>
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ようこそ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkG-La-17E">
@@ -69,23 +69,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="YVA-0l-Qv8"/>
                     </view>
+                    <connections>
+                        <segue destination="gwT-CU-sCy" kind="push" identifier="toUserNameView" id="U5o-c9-w6a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLs-LW-2D2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2431" y="-627"/>
         </scene>
-        <!--View Controller-->
+        <!--User Name View Controller-->
         <scene sceneID="FZB-Cv-Ruv">
             <objects>
-                <viewController storyboardIdentifier="usernameview" id="gwT-CU-sCy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="usernameview" id="gwT-CU-sCy" customClass="UserNameViewController" customModule="TennisMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T1D-dL-baH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blue-blurred-background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="54b-wH-Vwi">
-                                <rect key="frame" x="-133" y="0.0" width="640" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" USERNAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xc-Xo-50n">
                                 <rect key="frame" x="100" y="153" width="175" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -101,18 +100,42 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixe-A3-vOo">
-                                <rect key="frame" x="164" y="344" width="46" height="30"/>
+                                <rect key="frame" x="107" y="300" width="161" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="0.30980392159999998" green="0.76470588240000004" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="決定">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="decideButton" destination="gwT-CU-sCy" eventType="touchUpInside" id="NT2-ia-mDY"/>
+                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blue-blurred-background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="54b-wH-Vwi">
+                                <rect key="frame" x="-133" y="0.0" width="640" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="OjN-p7-SYI"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vMW-0L-VH8"/>
+                    <connections>
+                        <segue destination="bf4-hx-Q5w" kind="modal" identifier="toMainView" id="E9q-cZ-5Oh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n34-pE-mzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1623.2" y="-627.4362818590705"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="Jo0-ip-n2T">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="bf4-hx-Q5w" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ubU-Kc-JCE"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sEd-JY-VCM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-870" y="-723"/>
         </scene>
     </scenes>
     <resources>
