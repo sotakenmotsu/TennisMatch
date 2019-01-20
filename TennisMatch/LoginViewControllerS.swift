@@ -35,14 +35,14 @@ class LoginViewControllerS: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     }
     
     func toUserNameView() {
-//        let toUserNameView = storyboard!.instantiateViewController(withIdentifier: "usernameview")
-//        self.present(toUserNameView, animated: true, completion: nil)
         self.performSegue(withIdentifier: "toUserNameView", sender: nil)
     }
     
     func showAlert() {
         let alert = UIAlertController(title: "登録完了", message:"", preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default){ (action: UIAlertAction) in
+//            print(self.userDefaults.string(forKey: "idToken")!)
+//            self.ref.child("User").child(self.userDefaults.string(forKey: "idToken")!)
             self.toUserNameView()
         }
         alert.addAction(ok)
@@ -63,7 +63,8 @@ class LoginViewControllerS: UIViewController, UITextFieldDelegate, GIDSignInUIDe
             print("ログイン成功")
             self.userDefaults.set(authentication.idToken, forKey: "idToken")
             self.userDefaults.set(authentication.accessToken, forKey: "accessToken")
-//            self.ref.child("User").child(authentication.idToken)
+            print(authentication.idToken)
+            self.ref.child("User").child(authentication.idToken)
             self.showAlert()
         }
     }

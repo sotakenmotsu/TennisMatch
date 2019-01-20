@@ -23,18 +23,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         print(userDefaults.data(forKey: "idToken"))
         
-        if userDefaults.object(forKey: "idToken") != nil {
-            if userDefaults.object(forKey: "accessToken") != nil {
-                self.window = UIWindow(frame: UIScreen.main.bounds)
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "mainView")
-                self.window?.rootViewController = initialViewController
-                self.window?.makeKeyAndVisible()
-                print("値あり")
-            } else {
-
-            }
-        }
+//        if userDefaults.object(forKey: "idToken") != nil {
+//            if userDefaults.object(forKey: "accessToken") != nil {
+//                self.window = UIWindow(frame: UIScreen.main.bounds)
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                let initialViewController = storyboard.instantiateViewController(withIdentifier: "mainView")
+//                self.window?.rootViewController = initialViewController
+//                self.window?.makeKeyAndVisible()
+//                print("値あり")
+//            } else {
+//
+//            }
+//        }
         
         return true
     }
