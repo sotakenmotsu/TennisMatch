@@ -27,6 +27,8 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
     var endPickerView: UIPickerView = UIPickerView()
     var end: Int = 0
     let dateformatter = DateFormatter()
+    
+    let userDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -194,6 +196,7 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
             post.append(memberTextField.text!)
             post.append(levelTextField.text!)
             post.append(commentView.text!)
+            post.append(userDefaults.string(forKey: "username")!)
             self.performSegue(withIdentifier: "toPostViewController", sender: post)
         }
     }

@@ -63,8 +63,6 @@ class LoginViewControllerS: UIViewController, UITextFieldDelegate, GIDSignInUIDe
             print("ログイン成功")
             self.userDefaults.set(authentication.idToken, forKey: "idToken")
             self.userDefaults.set(authentication.accessToken, forKey: "accessToken")
-            print(authentication.idToken)
-            self.ref.child("User").child(authentication.idToken)
             self.showAlert()
         }
     }

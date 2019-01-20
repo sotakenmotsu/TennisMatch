@@ -27,7 +27,7 @@ class UserNameViewController: UIViewController {
     func showAlert() {
         let alert = UIAlertController(title: usernameTextField.text, message: "ユーザーネームはこちらでよろしいですか？", preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default){ (action: UIAlertAction) in
-            self.ref.child("User").child(self.userDefaults.string(forKey: "idToken")!).setValue(["username":self.usernameTextField.text!])
+            self.userDefaults.set(self.usernameTextField.text!, forKey: "username")
             self.toMainView()
         let cancel = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler: nil)
         }

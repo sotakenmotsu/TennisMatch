@@ -49,6 +49,7 @@ class PostViewController: UIViewController {
         let member = post[4]
         let level = post[5]
         let comment = post[6]
+        let postername = post[7]
         let randomid = String(arc4random_uniform(1000))
         ref.child("data").child(randomid).setValue(["place":place,
                                                     "date":date,
@@ -57,7 +58,8 @@ class PostViewController: UIViewController {
                                                     "member":member,
                                                     "level":level,
                                                     "comment":comment,
-                                                    "postdate":dateformatter.string(from: now)])
+                                                    "postdate":dateformatter.string(from: now),
+                                                    "postername":postername])
         self.dismiss(animated: true, completion: nil)
     }
     
