@@ -19,6 +19,10 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     var posts = [[String]]()
     var selectedpost = [String]()
     let refreshControl = UIRefreshControl()
+    var firstTime: Bool = true
+//    var numberOfCells: Int {
+//        return snapshot.childrenCount
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +54,37 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if !firstTime {
+            posts.removeAll()
+            
+            ref.child("data").observe(.value, with: { (snapshot) in
+                for itemsnapshot in snapshot.children {
+                    let place = Post(snapshot: itemsnapshot as! DataSnapshot)?.place as! String
+                    let date = Post(snapshot: itemsnapshot as! DataSnapshot)?.date as! String
+                    let startTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.startTime as! String
+                    let endTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.endTime as! String
+                    let member = Post(snapshot: itemsnapshot as! DataSnapshot)?.member as! String
+                    let level = Post(snapshot: itemsnapshot as! DataSnapshot)?.level as! String
+                    let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
+                    self.posts.append([place,date,startTime,endTime,member,level,comment])
+                    print(self.posts)
+                }
+            } )
+            
+            self.tableView.reloadData()
+            
+        }
+        firstTime = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchViewCell", for: indexPath) as! SearchViewControllerTableViewCell
         if self.posts.count == 0 {
@@ -63,13 +98,14 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var returnvalue: Int! = 0
-        if self.posts.count == 0 {
-            
-        } else {
-            returnvalue = self.posts.count
-        }
-        return returnvalue
+//        var returnvalue: Int! = 0
+//        if self.posts.count == 0 {
+//
+//        } else {
+//            returnvalue = self.posts.count
+//        }
+//        return returnvalue
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -95,10 +131,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 let level = Post(snapshot: itemsnapshot as! DataSnapshot)?.level as! String
                 let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
                 self.posts.append([place,date,startTime,endTime,member,level,comment])
-                print(self.posts)
-                self.tableView.reloadData()
             }
         } )
+        tableView.reloadData()
         refreshControl.endRefreshing()
     }
 }

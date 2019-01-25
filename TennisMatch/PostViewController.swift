@@ -24,6 +24,7 @@ class PostViewController: UIViewController {
     let user = Auth.auth().currentUser
     let now = Date()
     let dateformatter = DateFormatter()
+    var count = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +51,14 @@ class PostViewController: UIViewController {
         let level = post[5]
         let comment = post[6]
         let postername = post[7]
-        let randomid = String(arc4random_uniform(1000))
-        ref.child("data").child(randomid).setValue(["place":place,
+        ref.child("data").observe(.value, with: { (snapshot) in
+            for itemsnapshot in snapshot.children {
+                let place = Post(snapshot: itemsnapshot as! DataSnapshot)?.place as! String
+                self.count.append(place)
+            }
+        } )
+        let idnumber = String(self.count.count + 1)
+        ref.child("data").child(idnumber).setValue(["place":place,
                                                     "date":date,
                                                     "startTime":starttime,
                                                     "endTime":endtime,
