@@ -61,9 +61,15 @@ class PostViewController: UIViewController {
                                                     "postdate":dateformatter.string(from: now),
                                                     "postername":postername])
         self.dismiss(animated: true, completion: nil)
+        self.showAlert()
     }
     
-    @IBAction func backButton() {
-        self.dismiss(animated: true, completion: nil)
+    func showAlert() {
+        let alert = UIAlertController(title: "投稿完了！", message:"", preferredStyle: UIAlertController.Style.alert)
+        let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default){ (action: UIAlertAction) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
     }
 }

@@ -18,6 +18,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     let dateformatter = DateFormatter()
     var posts = [[String]]()
     var selectedpost = [String]()
+    let refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,20 +28,24 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.dataSource = self
         ref = Database.database().reference()
         dateformatter.dateFormat = "yyyy-MM-dd"
-        ref.child("data").observe(.value, with: { (snapshot) in
-            for itemsnapshot in snapshot.children {
-                let place = Post(snapshot: itemsnapshot as! DataSnapshot)?.place as! String
-                let date = Post(snapshot: itemsnapshot as! DataSnapshot)?.date as! String
-                let startTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.startTime as! String
-                let endTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.endTime as! String
-                let member = Post(snapshot: itemsnapshot as! DataSnapshot)?.member as! String
-                let level = Post(snapshot: itemsnapshot as! DataSnapshot)?.level as! String
-                let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
-                self.posts.append([place,date,startTime,endTime,member,level,comment])
-                print(self.posts)
-                self.tableView.reloadData()
-            }
-        } )
+        if posts.count == 0 {
+            ref.child("data").observe(.value, with: { (snapshot) in
+                for itemsnapshot in snapshot.children {
+                    let place = Post(snapshot: itemsnapshot as! DataSnapshot)?.place as! String
+                    let date = Post(snapshot: itemsnapshot as! DataSnapshot)?.date as! String
+                    let startTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.startTime as! String
+                    let endTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.endTime as! String
+                    let member = Post(snapshot: itemsnapshot as! DataSnapshot)?.member as! String
+                    let level = Post(snapshot: itemsnapshot as! DataSnapshot)?.level as! String
+                    let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
+                    self.posts.append([place,date,startTime,endTime,member,level,comment])
+                    print(self.posts)
+                    self.tableView.reloadData()
+                }
+            } )
+        }
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(SearchViewController.refresh(sender:)), for: .valueChanged)
 
         // Do any additional setup after loading the view.
     }
@@ -77,17 +82,23 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             JoinVC.post = sender as! [String]
         }
     }
-
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func refresh(sender: UIRefreshControl) {
+        posts.removeAll()
+        ref.child("data").observe(.value, with: { (snapshot) in
+            for itemsnapshot in snapshot.children {
+                let place = Post(snapshot: itemsnapshot as! DataSnapshot)?.place as! String
+                let date = Post(snapshot: itemsnapshot as! DataSnapshot)?.date as! String
+                let startTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.startTime as! String
+                let endTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.endTime as! String
+                let member = Post(snapshot: itemsnapshot as! DataSnapshot)?.member as! String
+                let level = Post(snapshot: itemsnapshot as! DataSnapshot)?.level as! String
+                let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
+                self.posts.append([place,date,startTime,endTime,member,level,comment])
+                print(self.posts)
+                self.tableView.reloadData()
+            }
+        } )
+        refreshControl.endRefreshing()
     }
-    */
-
 }

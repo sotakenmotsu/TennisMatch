@@ -41,8 +41,6 @@ class LoginViewControllerS: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     func showAlert() {
         let alert = UIAlertController(title: "登録完了", message:"", preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default){ (action: UIAlertAction) in
-//            print(self.userDefaults.string(forKey: "idToken")!)
-//            self.ref.child("User").child(self.userDefaults.string(forKey: "idToken")!)
             self.toUserNameView()
         }
         alert.addAction(ok)
