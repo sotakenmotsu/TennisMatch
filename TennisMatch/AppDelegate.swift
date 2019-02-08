@@ -8,12 +8,13 @@
 
 import UIKit
 import Firebase
+//import FirebaseMessaging
 import GoogleSignIn
-import FirebaseMessaging
 import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+    
     var window: UIWindow?
     let userDefaults = UserDefaults.standard
     
@@ -21,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         
-        Messaging.messaging().delegate = self as! MessagingDelegate
+//        Messaging.messaging().delegate = self
         
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance()?.delegate = self
