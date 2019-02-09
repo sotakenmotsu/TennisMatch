@@ -17,6 +17,7 @@ class JoinViewController: UIViewController {
     @IBOutlet var memberLabel: UILabel!
     @IBOutlet var levelLabel: UILabel!
     @IBOutlet var commentLabel: UILabel!
+    @IBOutlet var gmailLabel: UILabel!
     var post = [String]()
 
     override func viewDidLoad() {
@@ -30,6 +31,7 @@ class JoinViewController: UIViewController {
         memberLabel.text = post[4]
         levelLabel.text = post[5]
         commentLabel.text = post[6]
+        gmailLabel.text = post[7]
 
 
         // Do any additional setup after loading the view.

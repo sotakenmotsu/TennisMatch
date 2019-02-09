@@ -42,7 +42,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     let member = Post(snapshot: itemsnapshot as! DataSnapshot)?.member as! String
                     let level = Post(snapshot: itemsnapshot as! DataSnapshot)?.level as! String
                     let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
-                    self.posts.append([place,date,startTime,endTime,member,level,comment])
+                    let gmail = Post(snapshot: itemsnapshot as! DataSnapshot)?.gmail as! String
+                    self.posts.append([place,date,startTime,endTime,member,level,comment,gmail])
                     print(self.posts)
                     self.tableView.reloadData()
                 }
@@ -69,7 +70,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     let member = Post(snapshot: itemsnapshot as! DataSnapshot)?.member as! String
                     let level = Post(snapshot: itemsnapshot as! DataSnapshot)?.level as! String
                     let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
-                    self.posts.append([place,date,startTime,endTime,member,level,comment])
+                    let gmail = Post(snapshot: itemsnapshot as! DataSnapshot)?.gmail as! String
+                    self.posts.append([place,date,startTime,endTime,member,level,comment,gmail])
                     print(self.posts)
                 }
             } )
@@ -98,13 +100,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        var returnvalue: Int! = 0
-//        if self.posts.count == 0 {
-//
-//        } else {
-//            returnvalue = self.posts.count
-//        }
-//        return returnvalue
         return posts.count
     }
     
@@ -130,7 +125,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 let member = Post(snapshot: itemsnapshot as! DataSnapshot)?.member as! String
                 let level = Post(snapshot: itemsnapshot as! DataSnapshot)?.level as! String
                 let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
-                self.posts.append([place,date,startTime,endTime,member,level,comment])
+                let gmail = Post(snapshot: itemsnapshot as! DataSnapshot)?.gmail as! String
+                self.posts.append([place,date,startTime,endTime,member,level,comment,gmail])
             }
         } )
         tableView.reloadData()

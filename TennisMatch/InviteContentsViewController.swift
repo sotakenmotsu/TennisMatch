@@ -188,7 +188,7 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
             self.showalert()
         }else{
             var post = [String]()
-            let randomid = String(arc4random_uniform(1000))
+//            let randomid = String(arc4random_uniform(1000))
             post.append(placeTextField.text!)
             post.append(dateTextField.text!)
             post.append(startTimeTextField.text!)
@@ -197,6 +197,7 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
             post.append(levelTextField.text!)
             post.append(commentView.text!)
             post.append(userDefaults.string(forKey: "username")!)
+            post.append(userDefaults.string(forKey: "myGmail")!)
             self.performSegue(withIdentifier: "toPostViewController", sender: post)
         }
     }

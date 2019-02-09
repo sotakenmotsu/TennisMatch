@@ -51,10 +51,10 @@ class PostViewController: UIViewController {
         let level = post[5]
         let comment = post[6]
         let postername = post[7]
+        let gmail = post[8]
         ref.child("data").observe(.value, with: { (snapshot) in
             for itemsnapshot in snapshot.children {
-                let postCount = snapshot.childrenCount
-                self.count = Int(postCount)
+                self.count = Int(snapshot.childrenCount)
             }
         } )
         let idnumber = String(self.count + 1)
@@ -66,7 +66,8 @@ class PostViewController: UIViewController {
                                                     "level":level,
                                                     "comment":comment,
                                                     "postdate":dateformatter.string(from: now),
-                                                    "postername":postername])
+                                                    "postername":postername,
+                                                    "gmail":gmail])
         self.dismiss(animated: true, completion: nil)
         self.showAlert()
     }

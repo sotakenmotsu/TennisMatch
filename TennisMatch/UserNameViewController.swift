@@ -8,11 +8,19 @@ class UserNameViewController: UIViewController {
     @IBOutlet var usernameTextField: UITextField!
     var ref: DatabaseReference!
     let userDefaults = UserDefaults.standard
+    let user = Auth.auth().currentUser
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ref = Database.database().reference()
+        
+        if let user = user {
+            let userGmail = user.email
+            userDefaults.set(userGmail, forKey: "myGmail")
+        }
+        
+        print(userDefaults.string(forKey: "myGmail")!)
 
     }
     
