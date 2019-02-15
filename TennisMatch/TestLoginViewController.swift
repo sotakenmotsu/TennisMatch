@@ -8,57 +8,17 @@
 
 import UIKit
 import Firebase
-import GoogleSignIn
+import SVProgressHUD
 
-class TestLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
-    
-    @IBOutlet weak var siginButton: GIDSignInButton!
+class TestLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        GIDSignIn.sharedInstance()?.uiDelegate = self
-        GIDSignIn.sharedInstance()?.delegate    = self
-//        GIDSignIn.sharedInstance()?.signIn()
+
     }
     
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        print("here")
-        // ...
-//        if let error = error {
-//            // ...
-//            return
-//        }
-//
-//        guard let authentication = user.authentication else { return }
-//        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-//                                                       accessToken: authentication.accessToken)
-//        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-//            if let error = error {
-//                return
-//            }
-//            print("ログイン")
-//        }
-        if let _error = error {
-            print("Error: \(_error.localizedDescription)")
-            return
-        }
-        guard let authentication = user.authentication else { return }
-        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-            if let error = error {
-                return
-            }
-            print("ログイン成功")
-            //            self.userDefaults.set(authentication?.idToken, forKey: "idToken")
-            //            self.userDefaults.set(authentication?.accessToken, forKey: "accessToken")
-            //            self.showAlert()
-        }
-    
+    @IBAction func roadButton() {
+        SVProgressHUD.show()
     }
-        
-        @IBAction func tapGoogleButton(_ sender: Any) {
-            GIDSignIn.sharedInstance()?.signIn()
-        }
         
 }

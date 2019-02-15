@@ -43,6 +43,11 @@ class PostViewController: UIViewController {
     }
     
     @IBAction func postButton() {
+//        count = Int(ref.child("data").observe(.value, with: {(snapshot) in
+//            snapshot.childrenCount
+//            print(snapshot.childrenCount)
+//        }))
+        
         let place = post[0]
         let date = post[1]
         let starttime = post[2]
@@ -54,20 +59,32 @@ class PostViewController: UIViewController {
         let gmail = post[8]
         ref.child("data").observe(.value, with: { (snapshot) in
             for itemsnapshot in snapshot.children {
-                self.count = Int(snapshot.childrenCount)
+                let place = Post(snapshot: itemsnapshot as! DataSnapshot)?.place as! String
+                self.post.append(place)
+                print(self.post)
             }
-        } )
-        let idnumber = String(self.count + 1)
-        ref.child("data").child(idnumber).setValue(["place":place,
-                                                    "date":date,
-                                                    "startTime":starttime,
-                                                    "endTime":endtime,
-                                                    "member":member,
-                                                    "level":level,
-                                                    "comment":comment,
-                                                    "postdate":dateformatter.string(from: now),
-                                                    "postername":postername,
-                                                    "gmail":gmail])
+            self.ref.child("data").child("\(self.post.count + 1)").setValue(["place":place,
+                                                                             "date":date,
+                                                                             "startTime":starttime,
+                                                                             "endTime":endtime,
+                                                                             "member":member,
+                                                                             "level":level,
+                                                                             "comment":comment,
+                                                                             "postdate":self.dateformatter.string(from: self.now),
+                                                                             "postername":postername,
+                                                                             "gmail":gmail])
+        })
+//        let idnumber = String(self.count + 1)
+//        ref.child("data").child("\(self.count + 1)").setValue(["place":place,
+//                                                    "date":date,
+//                                                    "startTime":starttime,
+//                                                    "endTime":endtime,
+//                                                    "member":member,
+//                                                    "level":level,
+//                                                    "comment":comment,
+//                                                    "postdate":dateformatter.string(from: now),
+//                                                    "postername":postername,
+//                                                    "gmail":gmail])
         self.dismiss(animated: true, completion: nil)
         self.showAlert()
     }

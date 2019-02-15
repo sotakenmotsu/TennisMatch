@@ -12,6 +12,7 @@ target 'TennisMatch' do
   pod 'Firebase/Database'
   pod 'Firebase/Messaging'
   pod 'GoogleSignIn'
+  pod 'SVProgressHUD'
 
   target 'TennisMatchTests' do
     inherit! :search_paths

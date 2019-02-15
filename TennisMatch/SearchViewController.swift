@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import SVProgressHUD
 
 class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
@@ -18,15 +19,16 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     let dateformatter = DateFormatter()
     var posts = [[String]]()
     var selectedpost = [String]()
-    let refreshControl = UIRefreshControl()
+//    let refreshControl = UIRefreshControl()
     var firstTime: Bool = true
 //    var numberOfCells: Int {
 //        return snapshot.childrenCount
-//    }
+    //    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SVProgressHUD.show()
         self.tableView.rowHeight = 99
         tableView.delegate = self
         tableView.dataSource = self
@@ -45,12 +47,16 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     let gmail = Post(snapshot: itemsnapshot as! DataSnapshot)?.gmail as! String
                     self.posts.append([place,date,startTime,endTime,member,level,comment,gmail])
                     print(self.posts)
-                    self.tableView.reloadData()
                 }
+                self.tableView.reloadData()
+                SVProgressHUD.dismiss()
             } )
         }
-        tableView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(SearchViewController.refresh(sender:)), for: .valueChanged)
+        var refreshButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(SearchViewController.clickRefreshButton))
+        self.navigationItem.setRightBarButton(refreshButton, animated: true)
+//        SVProgressHUD.dismiss()
+//        tableView.refreshControl = refreshControl
+//        refreshControl.addTarget(self, action: #selector(SearchViewController.refresh(sender:)), for: .valueChanged)
 
         // Do any additional setup after loading the view.
     }
@@ -114,7 +120,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-    @objc func refresh(sender: UIRefreshControl) {
+    @objc func clickRefreshButton() {
+        SVProgressHUD.show()
         posts.removeAll()
         ref.child("data").observe(.value, with: { (snapshot) in
             for itemsnapshot in snapshot.children {
@@ -127,9 +134,30 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
                 let gmail = Post(snapshot: itemsnapshot as! DataSnapshot)?.gmail as! String
                 self.posts.append([place,date,startTime,endTime,member,level,comment,gmail])
+               
             }
+            self.tableView.reloadData()
+            SVProgressHUD.dismiss()
         } )
-        tableView.reloadData()
-        refreshControl.endRefreshing()
     }
+    
+    
+//    @objc func refresh(sender: UIRefreshControl) {
+//        posts.removeAll()
+//        ref.child("data").observe(.value, with: { (snapshot) in
+//            for itemsnapshot in snapshot.children {
+//                let place = Post(snapshot: itemsnapshot as! DataSnapshot)?.place as! String
+//                let date = Post(snapshot: itemsnapshot as! DataSnapshot)?.date as! String
+//                let startTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.startTime as! String
+//                let endTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.endTime as! String
+//                let member = Post(snapshot: itemsnapshot as! DataSnapshot)?.member as! String
+//                let level = Post(snapshot: itemsnapshot as! DataSnapshot)?.level as! String
+//                let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
+//                let gmail = Post(snapshot: itemsnapshot as! DataSnapshot)?.gmail as! String
+//                self.posts.append([place,date,startTime,endTime,member,level,comment,gmail])
+//            }
+//        } )
+//        tableView.reloadData()
+//        refreshControl.endRefreshing()
+//    }
 }

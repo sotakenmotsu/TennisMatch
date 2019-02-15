@@ -18,25 +18,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jry-aw-Jti" customClass="GIDSignInButton">
-                                <rect key="frame" x="67" y="204" width="240" height="128"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bS2-N1-1mb">
+                                <rect key="frame" x="118" y="237" width="139" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="ロード"/>
                                 <connections>
-                                    <action selector="tapGoogleButton:" destination="rRG-Ux-6Vb" eventType="valueChanged" id="NRm-IS-LCM"/>
+                                    <action selector="roadButton" destination="rRG-Ux-6Vb" eventType="touchUpInside" id="dWR-Zw-CzS"/>
                                 </connections>
-                            </view>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4qN-Cc-ISA"/>
                     </view>
-                    <connections>
-                        <outlet property="siginButton" destination="Jry-aw-Jti" id="AxT-tB-pGV"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="514-cx-40g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2431" y="-1321"/>
+            <point key="canvasLocation" x="-2431.1999999999998" y="-1321.8890554722639"/>
         </scene>
         <!--Login View ControllerS-->
         <scene sceneID="Wav-ev-PVF">
