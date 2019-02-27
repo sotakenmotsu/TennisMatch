@@ -52,7 +52,12 @@ class UserNameViewController: UIViewController {
     }
     
     func toMainView() {
-        self.performSegue(withIdentifier: "toMainView", sender: nil)
+        let display: CGRect = UIScreen.main.bounds
+        if display.size.height == CGFloat(568) {
+            self.performSegue(withIdentifier: "to5SMainView", sender: nil)
+        } else {
+            self.performSegue(withIdentifier: "toMainView", sender: nil)
+        }
     }
 
 }

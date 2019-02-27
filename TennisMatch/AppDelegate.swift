@@ -14,12 +14,15 @@ import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
-    
+
     var window: UIWindow?
     let userDefaults = UserDefaults.standard
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        let display: CGRect = UIScreen.main.bounds
+        
         FirebaseApp.configure()
         
 //        Messaging.messaging().delegate = self
@@ -27,7 +30,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance()?.delegate = self
         
-        print(userDefaults.data(forKey: "idToken"))
+        if display.size.height == CGFloat(568) {
+            let storyboard = UIStoryboard(name: "5SLogin", bundle: nil)
+            let rootViewController: UIViewController? = storyboard.instantiateInitialViewController()
+            window?.rootViewController = rootViewController
+            if userDefaults.object(forKey: "idToken") != nil {
+                if userDefaults.object(forKey: "accessToken") != nil {
+                    self.window = UIWindow(frame: UIScreen.main.bounds)
+                    let storyboard = UIStoryboard(name: "5SMain", bundle: nil)
+                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "5SmainView")
+                    self.window?.rootViewController = initialViewController
+                    self.window?.makeKeyAndVisible()
+                } else {
+                    
+                }
+            }
+        }
         
         if userDefaults.object(forKey: "idToken") != nil {
             if userDefaults.object(forKey: "accessToken") != nil {
@@ -36,7 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 let initialViewController = storyboard.instantiateViewController(withIdentifier: "mainView")
                 self.window?.rootViewController = initialViewController
                 self.window?.makeKeyAndVisible()
-                print("値あり")
             } else {
 
             }
