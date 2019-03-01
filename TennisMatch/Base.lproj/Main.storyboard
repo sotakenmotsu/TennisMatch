@@ -402,7 +402,6 @@
                     <connections>
                         <segue destination="fOd-mR-CqX" kind="relationship" relationship="viewControllers" id="zam-XX-M1U"/>
                         <segue destination="fkZ-E9-r52" kind="relationship" relationship="viewControllers" id="eXI-li-a42"/>
-                        <segue destination="lNp-U9-Pc6" kind="relationship" relationship="viewControllers" id="Cff-e3-vPw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UO0-Zy-oRM" userLabel="First Responder" sceneMemberID="firstResponder"/>

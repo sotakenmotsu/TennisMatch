@@ -27,6 +27,8 @@
 		C5DA541F219EE0870022A3B6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA541E219EE0870022A3B6 /* Post.swift */; };
 		C5ED20632226DB0200985D38 /* 5SLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5ED20622226DB0200985D38 /* 5SLogin.storyboard */; };
 		C5ED20652226DDE900985D38 /* 5SMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5ED20642226DDE900985D38 /* 5SMain.storyboard */; };
+		C5ED206722292E1000985D38 /* EULAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ED206622292E1000985D38 /* EULAViewController.swift */; };
+		C5ED2069222932F700985D38 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ED2068222932F700985D38 /* PrivacyViewController.swift */; };
 		C5F831FD21E8989F0048AEFF /* TestLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F831FC21E8989F0048AEFF /* TestLoginViewController.swift */; };
 		C5F831FF21E8B14A0048AEFF /* LoginViewControllerS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F831FE21E8B14A0048AEFF /* LoginViewControllerS.swift */; };
 		DFDBDB84A63F8B256F923147 /* Pods_TennisMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6364B585C1B103359F92075 /* Pods_TennisMatch.framework */; };
@@ -82,6 +84,8 @@
 		C5DA541E219EE0870022A3B6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C5ED20622226DB0200985D38 /* 5SLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = 5SLogin.storyboard; sourceTree = "<group>"; };
 		C5ED20642226DDE900985D38 /* 5SMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = 5SMain.storyboard; sourceTree = "<group>"; };
+		C5ED206622292E1000985D38 /* EULAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EULAViewController.swift; sourceTree = "<group>"; };
+		C5ED2068222932F700985D38 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		C5F831FC21E8989F0048AEFF /* TestLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoginViewController.swift; sourceTree = "<group>"; };
 		C5F831FE21E8B14A0048AEFF /* LoginViewControllerS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerS.swift; sourceTree = "<group>"; };
 		EF1889851E0116FE6415377F /* Pods-TennisMatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisMatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisMatch/Pods-TennisMatch.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 				C5ED20642226DDE900985D38 /* 5SMain.storyboard */,
 				C5DA53DE219EDB950022A3B6 /* AppDelegate.swift */,
 				C5F831FE21E8B14A0048AEFF /* LoginViewControllerS.swift */,
+				C5ED206622292E1000985D38 /* EULAViewController.swift */,
+				C5ED2068222932F700985D38 /* PrivacyViewController.swift */,
 				C5191B4421EB73000013A7C4 /* UserNameViewController.swift */,
 				C5DA5414219EE0010022A3B6 /* InviteContentsViewController.swift */,
 				C5DA5416219EE00A0022A3B6 /* PostViewController.swift */,
@@ -465,11 +471,13 @@
 				C5F831FF21E8B14A0048AEFF /* LoginViewControllerS.swift in Sources */,
 				C5DA5419219EE0240022A3B6 /* SearchViewController.swift in Sources */,
 				C5191B4521EB73000013A7C4 /* UserNameViewController.swift in Sources */,
+				C5ED206722292E1000985D38 /* EULAViewController.swift in Sources */,
 				C5DA541B219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift in Sources */,
 				C5DA541D219EE0690022A3B6 /* JoinViewController.swift in Sources */,
 				C5DA53DF219EDB950022A3B6 /* AppDelegate.swift in Sources */,
 				C5DA5415219EE0010022A3B6 /* InviteContentsViewController.swift in Sources */,
 				C5DA541F219EE0870022A3B6 /* Post.swift in Sources */,
+				C5ED2069222932F700985D38 /* PrivacyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +660,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JSD2CKK4KF;
 				INFOPLIST_FILE = TennisMatch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -661,7 +670,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "TennisMatch/TennisMatch-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -675,6 +684,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JSD2CKK4KF;
 				INFOPLIST_FILE = TennisMatch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -683,7 +693,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TennisMatch/TennisMatch-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

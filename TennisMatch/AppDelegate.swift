@@ -42,22 +42,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                     self.window?.rootViewController = initialViewController
                     self.window?.makeKeyAndVisible()
                 } else {
-                    
+                    if userDefaults.object(forKey: "idToken") != nil {
+                        if userDefaults.object(forKey: "accessToken") != nil {
+                            self.window = UIWindow(frame: UIScreen.main.bounds)
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let initialViewController = storyboard.instantiateViewController(withIdentifier: "mainView")
+                            self.window?.rootViewController = initialViewController
+                            self.window?.makeKeyAndVisible()
+                        } else {
+                            
+                        }
+                    }
                 }
             }
         }
         
-        if userDefaults.object(forKey: "idToken") != nil {
-            if userDefaults.object(forKey: "accessToken") != nil {
-                self.window = UIWindow(frame: UIScreen.main.bounds)
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "mainView")
-                self.window?.rootViewController = initialViewController
-                self.window?.makeKeyAndVisible()
-            } else {
-
-            }
-        }
+        
         
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self as! UNUserNotificationCenterDelegate

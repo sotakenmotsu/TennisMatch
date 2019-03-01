@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="UgK-Bb-Guw" customClass="SearchViewControllerTableViewCell" customModule="TennisMatch" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchViewCell" rowHeight="80" id="UgK-Bb-Guw" customClass="SearchViewControllerTableViewCell" customModule="TennisMatch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UgK-Bb-Guw" id="vuV-ND-9RB">
@@ -80,6 +80,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Dha-aX-foC"/>
                     <connections>
+                        <outlet property="tableView" destination="qMX-rR-PXW" id="HaA-kH-X39"/>
                         <segue destination="Lzc-gG-6DF" kind="push" identifier="toJoinViewController" id="eZK-wZ-6kU"/>
                     </connections>
                 </viewController>
@@ -561,7 +562,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Tf1-qD-NwL">
             <objects>
-                <tabBarController storyboardIdentifier="mainView" id="OmQ-0n-zOM" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="5SmainView" id="OmQ-0n-zOM" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qMX-RL-tof">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

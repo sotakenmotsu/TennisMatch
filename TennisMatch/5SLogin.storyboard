@@ -37,8 +37,28 @@
                                     <action selector="tapGoogleSignIn:" destination="zgO-jc-XIV" eventType="touchUpInside" id="MjG-QZ-A2d"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULs-QE-Ugt">
+                                <rect key="frame" x="83.5" y="518" width="153" height="30"/>
+                                <state key="normal" title="プライバシーポリシー"/>
+                                <connections>
+                                    <segue destination="aAt-YE-QSf" kind="show" id="xoG-II-7TN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsd-wE-eMD">
+                                <rect key="frame" x="141" y="480" width="38" height="30"/>
+                                <state key="normal" title="EULA"/>
+                                <connections>
+                                    <segue destination="azc-Of-gX1" kind="show" id="wsq-Qb-HgF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ebm-hK-kBp" firstAttribute="bottom" secondItem="ULs-QE-Ugt" secondAttribute="bottom" constant="20" id="26L-KP-j1m"/>
+                            <constraint firstItem="bsd-wE-eMD" firstAttribute="centerX" secondItem="Rfc-p3-ACg" secondAttribute="centerX" id="Go9-4U-zMP"/>
+                            <constraint firstItem="ULs-QE-Ugt" firstAttribute="top" secondItem="bsd-wE-eMD" secondAttribute="bottom" constant="8" id="hVT-lG-HKg"/>
+                            <constraint firstItem="ULs-QE-Ugt" firstAttribute="centerX" secondItem="Rfc-p3-ACg" secondAttribute="centerX" id="oOw-QG-Bow"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ebm-hK-kBp"/>
                     </view>
                     <connections>
@@ -48,6 +68,171 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9q-Tz-YCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="16.875" y="128.87323943661971"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="DYE-uu-9TJ">
+            <objects>
+                <viewController id="azc-Of-gX1" customClass="EULAViewController" customModule="TennisMatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ykS-wg-k1a">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bmu-LP-yQz">
+                                <rect key="frame" x="0.0" y="60" width="320" height="508"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">This End-User License Agreement ("EULA") is a legal agreement between you and my app.
+
+This EULA agreement governs your acquisition and use of our TennisMatch software ("Software") directly from My Company or indirectly through a My Company authorized reseller or distributor (a "Reseller").
+
+Please read this EULA agreement carefully before completing the installation process and using the TennisMatch software. It provides a license to use the TennisMatch software and contains warranty information and liability disclaimers.
+
+If you register for a free trial of the TennisMatch software, this EULA agreement will also govern that trial. By clicking "accept" or installing and/or using the My App software, you are confirming your acceptance of the Software and agreeing to become bound by the terms of this EULA agreement.
+
+If you are entering into this EULA agreement on behalf of a company or other legal entity, you represent that you have the authority to bind such entity and its affiliates to these terms and conditions. If you do not have such authority or if you do not agree with the terms and conditions of this EULA agreement, do not install or use the Software, and you must not accept this EULA agreement.
+
+This EULA agreement shall apply only to the Software supplied by My Company herewith regardless of whether other software is referred to or described herein. The terms also apply to any My Company updates, supplements, Internet-based services, and support services for the Software, unless other terms accompany those items on delivery. If so, those terms apply.
+
+License Grant
+
+My Company hereby grants you a personal, non-transferable, non-exclusive licence to use the My App software on your devices in accordance with the terms of this EULA agreement.
+
+You are permitted to load the My App software (for example a PC, laptop, mobile or tablet) under your control. You are responsible for ensuring your device meets the minimum requirements of the My App software.
+
+You are not permitted to:
+
+Edit, alter, modify, adapt, translate or otherwise change the whole or any part of the Software nor permit the whole or any part of the Software to be combined with or become incorporated in any other software, nor decompile, disassemble or reverse engineer the Software or attempt to do any such things
+Reproduce, copy, distribute, resell or otherwise use the Software for any commercial purpose
+Allow any third party to use the Software on behalf of or for the benefit of any third party
+Use the Software in any way which breaches any applicable local, national or international law
+use the Software for any purpose that My Company considers is a breach of this EULA agreement
+Intellectual Property and Ownership
+
+My Company shall at all times retain ownership of the Software as originally downloaded by you and all subsequent downloads of the Software by you. The Software (and the copyright, and other intellectual property rights of whatever nature in the Software, including any modifications made thereto) are and shall remain the property of My Company.
+
+My Company reserves the right to grant licences to use the Software to third parties.
+
+Termination
+
+This EULA agreement is effective from the date you first use the Software and shall continue until terminated. You may terminate it at any time upon written notice to My Company.
+
+This EULA was created by eulatemplate.com for My App
+
+It will also terminate immediately if you fail to comply with any term of this EULA agreement. Upon such termination, the licenses granted by this EULA agreement will immediately terminate and you agree to stop all access and use of the Software. The provisions that by their nature continue and survive will survive any termination of this EULA agreement.
+
+Governing Law
+
+This EULA agreement, and any dispute arising out of or in connection with this EULA agreement, shall be governed by and construed in accordance with the laws of My Country.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5w-LT-APT">
+                                <rect key="frame" x="24" y="22" width="31" height="30"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="back" destination="azc-Of-gX1" eventType="touchUpInside" id="TsQ-WB-xOw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EULA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGi-0l-kAR">
+                                <rect key="frame" x="138.5" y="31" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bmu-LP-yQz" firstAttribute="top" secondItem="v5w-LT-APT" secondAttribute="bottom" constant="8" id="8Y6-p6-lpL"/>
+                            <constraint firstItem="OGi-0l-kAR" firstAttribute="centerX" secondItem="ykS-wg-k1a" secondAttribute="centerX" id="NdK-1z-NWL"/>
+                            <constraint firstItem="bmu-LP-yQz" firstAttribute="bottom" secondItem="pPo-wk-RUg" secondAttribute="bottom" id="PLV-Bj-ev4"/>
+                            <constraint firstItem="bmu-LP-yQz" firstAttribute="top" secondItem="OGi-0l-kAR" secondAttribute="bottom" constant="8" id="dR7-DU-HOy"/>
+                            <constraint firstItem="bmu-LP-yQz" firstAttribute="trailing" secondItem="pPo-wk-RUg" secondAttribute="trailing" id="eHZ-5i-ifR"/>
+                            <constraint firstItem="bmu-LP-yQz" firstAttribute="top" secondItem="pPo-wk-RUg" secondAttribute="top" constant="40" id="mb1-Pv-oDn"/>
+                            <constraint firstItem="bmu-LP-yQz" firstAttribute="leading" secondItem="pPo-wk-RUg" secondAttribute="leading" id="nhz-Vs-fnW"/>
+                            <constraint firstItem="v5w-LT-APT" firstAttribute="leading" secondItem="pPo-wk-RUg" secondAttribute="leading" constant="24" id="s5i-sY-8ZX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pPo-wk-RUg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zcI-3K-4Tz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="16.875" y="875.70422535211264"/>
+        </scene>
+        <!--Privacy View Controller-->
+        <scene sceneID="6ne-0x-3tc">
+            <objects>
+                <viewController id="aAt-YE-QSf" customClass="PrivacyViewController" customModule="TennisMatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Nh-TG-web">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P5B-Fr-UMS">
+                                <rect key="frame" x="0.0" y="60" width="320" height="508"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">本アプリ上で提供するサービスにおけるプライバシー情報の取扱いについて，以下のとおりプライバシーポリシーを定めます。
+
+
+ 
+
+第１条（プライバシー情報の収集方法）
+
+ユーザーについて,端末の画像などを，ユーザーが当サービスや提携先のサービスを利用する際に収集します。
+
+ 
+
+第２条（個人情報を収集・利用する目的）
+
+個人情報を収集・利用する目的は，以下のとおりです。
+
+・アプリの機能要件を満たすため
+
+ 
+
+第３条（個人情報の第三者提供）
+
+次に掲げる場合を除いて，あらかじめユーザーの同意を得ることなく，第三者に個人情報を提供することはありません。ただし，個人情報保護法その他の法令で認められる場合を除きます。
+
+（1）法令に基づく場合
+
+（2）人の生命，身体または財産の保護のために必要がある場合であって，本人の同意を得ることが困難であるとき
+
+（3）公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって，本人の同意を得ることが困難であるとき
+
+（4）国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって，本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき
+</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ztc-ct-GnA">
+                                <rect key="frame" x="24" y="22" width="31" height="30"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="back" destination="aAt-YE-QSf" eventType="touchUpInside" id="bv8-UH-Mmz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="プライバシーポリシー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECt-pE-BR4">
+                                <rect key="frame" x="73" y="31" width="174" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="P5B-Fr-UMS" firstAttribute="top" secondItem="oDM-CV-v8p" secondAttribute="top" constant="40" id="5hT-tU-9jf"/>
+                            <constraint firstItem="P5B-Fr-UMS" firstAttribute="top" secondItem="Ztc-ct-GnA" secondAttribute="bottom" constant="8" id="CPE-Tu-LTW"/>
+                            <constraint firstItem="P5B-Fr-UMS" firstAttribute="leading" secondItem="oDM-CV-v8p" secondAttribute="leading" id="I8W-Tc-iha"/>
+                            <constraint firstItem="P5B-Fr-UMS" firstAttribute="bottom" secondItem="oDM-CV-v8p" secondAttribute="bottom" id="U2t-D0-mtg"/>
+                            <constraint firstItem="ECt-pE-BR4" firstAttribute="centerX" secondItem="2Nh-TG-web" secondAttribute="centerX" id="bQj-Hi-GTU"/>
+                            <constraint firstItem="P5B-Fr-UMS" firstAttribute="trailing" secondItem="oDM-CV-v8p" secondAttribute="trailing" id="dZj-FB-Nza"/>
+                            <constraint firstItem="P5B-Fr-UMS" firstAttribute="top" secondItem="ECt-pE-BR4" secondAttribute="bottom" constant="8" id="fjV-YZ-m9b"/>
+                            <constraint firstItem="Ztc-ct-GnA" firstAttribute="leading" secondItem="oDM-CV-v8p" secondAttribute="leading" constant="24" id="maM-xL-qDy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oDM-CV-v8p"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cx5-4j-Nbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044" y="876"/>
         </scene>
         <!--User Name View Controller-->
         <scene sceneID="2FV-Wm-KtO">
