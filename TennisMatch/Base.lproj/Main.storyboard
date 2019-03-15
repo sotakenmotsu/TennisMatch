@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Invite Contents View Controller-->
+        <!--募集-->
         <scene sceneID="U6X-b8-7YF">
             <objects>
                 <viewController id="Ax0-L8-Jvi" customClass="InviteContentsViewController" customModule="TennisMatch" customModuleProvider="target" sceneMemberID="viewController">
@@ -188,7 +188,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FKi-fF-YpN"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VkW-Cd-nsI"/>
+                    <navigationItem key="navigationItem" title="募集" id="NsM-1u-fZd"/>
                     <connections>
                         <outlet property="commentView" destination="mMq-yY-TS3" id="sRs-1Y-8wU"/>
                         <outlet property="dateTextField" destination="nWd-FM-jWQ" id="Yyd-hy-qOh"/>
@@ -204,7 +204,7 @@
             </objects>
             <point key="canvasLocation" x="-602.39999999999998" y="-627.4362818590705"/>
         </scene>
-        <!--Post View Controller-->
+        <!--確認-->
         <scene sceneID="nze-XZ-XHv">
             <objects>
                 <viewController id="gUG-vU-Gj7" customClass="PostViewController" customModule="TennisMatch" customModuleProvider="target" sceneMemberID="viewController">
@@ -375,7 +375,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zIp-eZ-fyW"/>
                     </view>
-                    <navigationItem key="navigationItem" id="DLn-55-vm8"/>
+                    <navigationItem key="navigationItem" title="確認" id="I3T-El-nQJ"/>
                     <connections>
                         <outlet property="commentView" destination="dQT-kg-2d1" id="cpc-EP-8gh"/>
                         <outlet property="dateView" destination="9t2-RY-9mH" id="thF-sh-F6A"/>
@@ -408,7 +408,7 @@
             </objects>
             <point key="canvasLocation" x="-1503" y="72"/>
         </scene>
-        <!--Search View Controller-->
+        <!--探す-->
         <scene sceneID="5wT-ni-4PL">
             <objects>
                 <viewController id="N3d-jR-wTc" customClass="SearchViewController" customModule="TennisMatch" customModuleProvider="target" sceneMemberID="viewController">
@@ -505,7 +505,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Je-tu-35D"/>
                     </view>
-                    <navigationItem key="navigationItem" id="b5t-f1-O7R"/>
+                    <navigationItem key="navigationItem" title="探す" id="Kst-tg-zW6"/>
                     <connections>
                         <outlet property="tableView" destination="ieh-sc-9Wt" id="r5b-JR-nk5"/>
                         <segue destination="pWP-1J-8ce" kind="show" identifier="toJoinViewController" id="Sro-RD-QYB"/>
@@ -515,7 +515,7 @@
             </objects>
             <point key="canvasLocation" x="336.80000000000001" y="73.313343328335833"/>
         </scene>
-        <!--Join View Controller-->
+        <!--募集要項-->
         <scene sceneID="MRd-hZ-4P9">
             <objects>
                 <viewController id="pWP-1J-8ce" customClass="JoinViewController" customModule="TennisMatch" customModuleProvider="target" sceneMemberID="viewController">
@@ -689,7 +689,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hqx-fn-WaN"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0uO-gq-O4K"/>
+                    <navigationItem key="navigationItem" title="募集要項" id="QAR-vc-fjU"/>
                     <connections>
                         <outlet property="commentLabel" destination="1fY-cQ-uAb" id="lfF-PK-V42"/>
                         <outlet property="dateLabel" destination="7Z7-ls-YAM" id="jz8-Ha-Sal"/>
@@ -856,6 +856,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.53333333329999999" green="0.74901960779999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

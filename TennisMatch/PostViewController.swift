@@ -48,15 +48,7 @@ class PostViewController: UIViewController {
     }
     
     @IBAction func postButton() {
-//        count = Int(ref.child("data").observe(.value, with: {(snapshot) in
-//            snapshot.childrenCount
-//            print(snapshot.childrenCount)
-//        }))
-//        ref.child("data").observe(.value, with: {(snapshot) in
-//            self.count = Int(snapshot.childrenCount)
-//            print(self.count)
-//        })
-        
+    
         let place = post[0]
         let date = post[1]
         let starttime = post[2]
@@ -73,18 +65,7 @@ class PostViewController: UIViewController {
                 self.post.append(place)
                 print(self.post)
             }
-//            self.ref.child("data").child("\(self.post.count + 1)").setValue(["place":place,
-//                                                                             "date":date,
-//                                                                             "startTime":starttime,
-//                                                                             "endTime":endtime,
-//                                                                             "member":member,
-//                                                                             "level":level,
-//                                                                             "comment":comment,
-//                                                                             "postdate":self.dateformatter.string(from: self.now),
-//                                                                             "postername":postername,
-//                                                                             "gmail":gmail])
         })
-//        let idnumber = String(self.count + 1)
         ref.child("data").child("\(self.count + 1)").setValue(["place":place,
                                                     "date":date,
                                                     "startTime":starttime,
@@ -95,14 +76,13 @@ class PostViewController: UIViewController {
                                                     "postdate":dateformatter.string(from: now),
                                                     "postername":postername,
                                                     "gmail":gmail])
-        self.dismiss(animated: true, completion: nil)
         self.showAlert()
     }
     
     func showAlert() {
         let alert = UIAlertController(title: "投稿完了！", message:"", preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default){ (action: UIAlertAction) in
-            self.navigationController?.popViewController(animated: true)
+            self.navigationController!.popViewController(animated: true)
         }
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)

@@ -19,11 +19,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     let dateformatter = DateFormatter()
     var posts = [[String]]()
     var selectedpost = [String]()
-//    let refreshControl = UIRefreshControl()
     var firstTime: Bool = true
-//    var numberOfCells: Int {
-//        return snapshot.childrenCount
-    //    }
+    var loginButtonBool: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,12 +50,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             } )
         }
         var refreshButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(SearchViewController.clickRefreshButton))
-        self.navigationItem.setRightBarButton(refreshButton, animated: true)
-//        SVProgressHUD.dismiss()
-//        tableView.refreshControl = refreshControl
-//        refreshControl.addTarget(self, action: #selector(SearchViewController.refresh(sender:)), for: .valueChanged)
-
-        // Do any additional setup after loading the view.
+        var loginButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.action, target: self, action: #selector(SearchViewController.backToLoginView))
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -120,7 +113,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-    @objc func clickRefreshButton() {
+    @IBAction func clickRefreshButton() {
         SVProgressHUD.show()
         posts.removeAll()
         ref.child("data").observe(.value, with: { (snapshot) in
@@ -141,23 +134,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         } )
     }
     
-    
-//    @objc func refresh(sender: UIRefreshControl) {
-//        posts.removeAll()
-//        ref.child("data").observe(.value, with: { (snapshot) in
-//            for itemsnapshot in snapshot.children {
-//                let place = Post(snapshot: itemsnapshot as! DataSnapshot)?.place as! String
-//                let date = Post(snapshot: itemsnapshot as! DataSnapshot)?.date as! String
-//                let startTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.startTime as! String
-//                let endTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.endTime as! String
-//                let member = Post(snapshot: itemsnapshot as! DataSnapshot)?.member as! String
-//                let level = Post(snapshot: itemsnapshot as! DataSnapshot)?.level as! String
-//                let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
-//                let gmail = Post(snapshot: itemsnapshot as! DataSnapshot)?.gmail as! String
-//                self.posts.append([place,date,startTime,endTime,member,level,comment,gmail])
-//            }
-//        } )
-//        tableView.reloadData()
-//        refreshControl.endRefreshing()
-//    }
+    @IBAction func backToLoginView() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+        let next: UIViewController = storyboard.instantiateInitialViewController() as! UIViewController
+        present(next, animated: true, completion: nil)
+    }
 }

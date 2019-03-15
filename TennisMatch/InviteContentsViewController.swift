@@ -75,6 +75,17 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        placeTextField.text = ""
+        dateTextField.text = ""
+        memberTextField.text = ""
+        levelTextField.text = ""
+        commentView.text = ""
+        startTimeTextField.text = ""
+        endTimeTextField.text = ""
+    }
+    
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if (text == "\n") {
             commentView.resignFirstResponder()

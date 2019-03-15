@@ -14,7 +14,7 @@ import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
-
+    
     var window: UIWindow?
     let userDefaults = UserDefaults.standard
     
@@ -42,6 +42,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                     self.window?.rootViewController = initialViewController
                     self.window?.makeKeyAndVisible()
                 } else {
+                }
+            } else {
+            }
+        } else {
                     if userDefaults.object(forKey: "idToken") != nil {
                         if userDefaults.object(forKey: "accessToken") != nil {
                             self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -53,8 +57,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                             
                         }
                     }
-                }
-            }
         }
         
         

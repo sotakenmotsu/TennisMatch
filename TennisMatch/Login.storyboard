@@ -78,6 +78,13 @@
                                     <segue destination="8lf-hm-TcD" kind="show" id="X17-o3-M8e"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrq-db-2V8">
+                                <rect key="frame" x="118.5" y="547" width="138" height="30"/>
+                                <state key="normal" title="ログインせずに使う"/>
+                                <connections>
+                                    <segue destination="6vT-Sp-V3I" kind="show" id="j9H-E8-xIG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -85,10 +92,12 @@
                             <constraint firstItem="IkG-La-17E" firstAttribute="top" secondItem="YVA-0l-Qv8" secondAttribute="top" constant="115" id="AYG-hY-qVy"/>
                             <constraint firstItem="s8n-DP-72T" firstAttribute="centerX" secondItem="2pa-8Y-Ue9" secondAttribute="centerX" id="GXt-51-EkB"/>
                             <constraint firstItem="YVA-0l-Qv8" firstAttribute="bottom" secondItem="bb9-uY-I0C" secondAttribute="bottom" constant="46" id="SOj-he-EMs"/>
+                            <constraint firstItem="wrq-db-2V8" firstAttribute="centerX" secondItem="2pa-8Y-Ue9" secondAttribute="centerX" id="bmT-vs-Im6"/>
                             <constraint firstItem="IkG-La-17E" firstAttribute="centerX" secondItem="2pa-8Y-Ue9" secondAttribute="centerX" id="eeq-VS-JF1"/>
                             <constraint firstItem="bb9-uY-I0C" firstAttribute="centerX" secondItem="2pa-8Y-Ue9" secondAttribute="centerX" id="iIU-bL-h6H"/>
                             <constraint firstItem="YVA-0l-Qv8" firstAttribute="bottom" secondItem="vAZ-8U-QKj" secondAttribute="bottom" constant="8" id="qL3-II-Lw3"/>
                             <constraint firstItem="s8n-DP-72T" firstAttribute="centerY" secondItem="2pa-8Y-Ue9" secondAttribute="centerY" id="tcc-BO-lDG"/>
+                            <constraint firstItem="bb9-uY-I0C" firstAttribute="top" secondItem="wrq-db-2V8" secondAttribute="bottom" constant="14" id="xri-iS-r4S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YVA-0l-Qv8"/>
                     </view>
@@ -111,7 +120,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A0i-Dx-JbW">
                                 <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">This End-User License Agreement ("EULA") is a legal agreement between you and my app.
+                                <string key="text">This End-User License Agreement ("EULA") is a legal agreement between you and my app.
 
 This EULA agreement governs your acquisition and use of our TennisMatch software ("Software") directly from My Company or indirectly through a My Company authorized reseller or distributor (a "Reseller").
 
@@ -153,7 +162,7 @@ It will also terminate immediately if you fail to comply with any term of this E
 Governing Law
 
 This EULA agreement, and any dispute arising out of or in connection with this EULA agreement, shall be governed by and construed in accordance with the laws of My Country.
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -200,7 +209,7 @@ This EULA agreement, and any dispute arising out of or in connection with this E
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AST-nu-L4u">
                                 <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">本アプリ上で提供するサービスにおけるプライバシー情報の取扱いについて，以下のとおりプライバシーポリシーを定めます。
+                                <string key="text">本アプリ上で提供するサービスにおけるプライバシー情報の取扱いについて，以下のとおりプライバシーポリシーを定めます。
 
 
  
@@ -229,7 +238,7 @@ This EULA agreement, and any dispute arising out of or in connection with this E
 
 （3）公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって，本人の同意を得ることが困難であるとき
 
-（4）国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって，本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき</mutableString>
+（4）国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって，本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -344,6 +353,14 @@ This EULA agreement, and any dispute arising out of or in connection with this E
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEd-JY-VCM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-870" y="-723"/>
+        </scene>
+        <!--Unlogined-->
+        <scene sceneID="lyk-jM-Yt4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Unlogined" id="6vT-Sp-V3I" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kPh-8E-BVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-949" y="-510"/>
         </scene>
     </scenes>
     <resources>
