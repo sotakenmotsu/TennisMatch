@@ -86,11 +86,13 @@
                     <navigationItem key="navigationItem" title="探す" id="TmP-Oq-SiF">
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="success.png" id="Cw3-8d-KRK">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="clickRefreshButton" destination="ncV-nR-MAb" id="cIW-nE-P1q"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="google.png" id="s4i-4M-vWv">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="backToLoginView" destination="ncV-nR-MAb" id="0UD-GM-x7S"/>
                                 </connections>

@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-//import FirebaseAuth
 import FirebaseDatabase
 import GoogleSignIn
 
@@ -41,6 +40,9 @@ class LoginViewControllerS: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     func showAlert() {
         let alert = UIAlertController(title: "登録完了", message:"", preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default){ (action: UIAlertAction) in
+            let uuid = UUID().uuidString
+            print(uuid)
+            self.userDefaults.set(uuid, forKey: "uuid")
             self.toUserNameView()
         }
         alert.addAction(ok)

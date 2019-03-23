@@ -21,6 +21,7 @@ class UserNameViewController: UIViewController {
         }
         
         print(userDefaults.string(forKey: "myGmail")!)
+        print(userDefaults.string(forKey: "uuid")!)
 
     }
     

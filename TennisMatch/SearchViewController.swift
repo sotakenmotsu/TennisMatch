@@ -49,8 +49,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 SVProgressHUD.dismiss()
             } )
         }
-        var refreshButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh, target: self, action: #selector(SearchViewController.clickRefreshButton))
-        var loginButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.action, target: self, action: #selector(SearchViewController.backToLoginView))
         
     }
     

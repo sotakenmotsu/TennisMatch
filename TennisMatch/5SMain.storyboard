@@ -78,7 +78,14 @@
                         <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="tOQ-rc-8sh"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Dha-aX-foC"/>
+                    <navigationItem key="navigationItem" id="Dha-aX-foC">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" id="rml-zK-7Ps">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </barButtonItem>
+                            <barButtonItem title="Item" id="FTr-Oz-lj4"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="qMX-rR-PXW" id="HaA-kH-X39"/>
                         <segue destination="Lzc-gG-6DF" kind="push" identifier="toJoinViewController" id="eZK-wZ-6kU"/>

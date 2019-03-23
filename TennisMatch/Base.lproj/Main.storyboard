@@ -505,7 +505,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Je-tu-35D"/>
                     </view>
-                    <navigationItem key="navigationItem" title="探す" id="Kst-tg-zW6"/>
+                    <navigationItem key="navigationItem" title="探す" id="Kst-tg-zW6">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="success.png" id="IfL-zh-Npt">
+                            <connections>
+                                <action selector="clickRefreshButton" destination="N3d-jR-wTc" id="HXq-Da-lYj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="ieh-sc-9Wt" id="r5b-JR-nk5"/>
                         <segue destination="pWP-1J-8ce" kind="show" identifier="toJoinViewController" id="Sro-RD-QYB"/>
@@ -945,4 +951,7 @@
             <point key="canvasLocation" x="336.80000000000001" y="778.56071964017997"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="success.png" width="28" height="28"/>
+    </resources>
 </document>
