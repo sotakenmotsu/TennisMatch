@@ -35,14 +35,16 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             ref.child("data").observe(.value, with: { (snapshot) in
                 for itemsnapshot in snapshot.children {
                     let place = Post(snapshot: itemsnapshot as! DataSnapshot)?.place as! String
-                    let date = Post(snapshot: itemsnapshot as! DataSnapshot)?.date as! String
-                    let startTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.startTime as! String
-                    let endTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.endTime as! String
+//                    let date = Post(snapshot: itemsnapshot as! DataSnapshot)?.date as! String
+//                    let startTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.startTime as! String
+//                    let endTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.endTime as! String
                     let member = Post(snapshot: itemsnapshot as! DataSnapshot)?.member as! String
                     let level = Post(snapshot: itemsnapshot as! DataSnapshot)?.level as! String
                     let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
                     let gmail = Post(snapshot: itemsnapshot as! DataSnapshot)?.gmail as! String
-                    self.posts.append([place,date,startTime,endTime,member,level,comment,gmail])
+                    let dates = Post(snapshot: itemsnapshot as! DataSnapshot)?.dates as! [String]
+                    let members = Post(snapshot: itemsnapshot as! DataSnapshot)?.members as! [String]
+                    self.posts.append([place,member,level,comment,gmail,dates,members])
                     print(self.posts)
                 }
                 self.tableView.reloadData()
@@ -61,14 +63,16 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             ref.child("data").observe(.value, with: { (snapshot) in
                 for itemsnapshot in snapshot.children {
                     let place = Post(snapshot: itemsnapshot as! DataSnapshot)?.place as! String
-                    let date = Post(snapshot: itemsnapshot as! DataSnapshot)?.date as! String
-                    let startTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.startTime as! String
-                    let endTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.endTime as! String
+//                    let date = Post(snapshot: itemsnapshot as! DataSnapshot)?.date as! String
+//                    let startTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.startTime as! String
+//                    let endTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.endTime as! String
                     let member = Post(snapshot: itemsnapshot as! DataSnapshot)?.member as! String
                     let level = Post(snapshot: itemsnapshot as! DataSnapshot)?.level as! String
                     let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
                     let gmail = Post(snapshot: itemsnapshot as! DataSnapshot)?.gmail as! String
-                    self.posts.append([place,date,startTime,endTime,member,level,comment,gmail])
+                    let dates = Post(snapshot: itemsnapshot as! DataSnapshot)?.dates as! [String]
+                    let members = Post(snapshot: itemsnapshot as! DataSnapshot)?.members as! [String]
+                    self.posts.append([place,member,level,comment,gmail,dates,members])
                     print(self.posts)
                 }
             } )
@@ -117,14 +121,16 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         ref.child("data").observe(.value, with: { (snapshot) in
             for itemsnapshot in snapshot.children {
                 let place = Post(snapshot: itemsnapshot as! DataSnapshot)?.place as! String
-                let date = Post(snapshot: itemsnapshot as! DataSnapshot)?.date as! String
-                let startTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.startTime as! String
-                let endTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.endTime as! String
+//                let date = Post(snapshot: itemsnapshot as! DataSnapshot)?.date as! String
+//                let startTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.startTime as! String
+//                let endTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.endTime as! String
                 let member = Post(snapshot: itemsnapshot as! DataSnapshot)?.member as! String
                 let level = Post(snapshot: itemsnapshot as! DataSnapshot)?.level as! String
                 let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
                 let gmail = Post(snapshot: itemsnapshot as! DataSnapshot)?.gmail as! String
-                self.posts.append([place,date,startTime,endTime,member,level,comment,gmail])
+                let dates = Post(snapshot: itemsnapshot as! DataSnapshot)?.dates as! [String]
+                let members = Post(snapshot: itemsnapshot as! DataSnapshot)?.members as! [String]
+                self.posts.append([place,member,level,comment,gmail,dates,members])
                
             }
             self.tableView.reloadData()

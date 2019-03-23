@@ -40,9 +40,6 @@ class LoginViewControllerS: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     func showAlert() {
         let alert = UIAlertController(title: "登録完了", message:"", preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default){ (action: UIAlertAction) in
-            let uuid = UUID().uuidString
-            print(uuid)
-            self.userDefaults.set(uuid, forKey: "uuid")
             self.toUserNameView()
         }
         alert.addAction(ok)
@@ -63,7 +60,8 @@ class LoginViewControllerS: UIViewController, UITextFieldDelegate, GIDSignInUIDe
             print("ログイン成功")
             self.userDefaults.set(authentication.idToken, forKey: "idToken")
             self.userDefaults.set(authentication.accessToken, forKey: "accessToken")
-            
+            let uuid = UUID().uuidString
+            self.userDefaults.set(uuid, forKey: "uuid")
             self.showAlert()
         }
     }

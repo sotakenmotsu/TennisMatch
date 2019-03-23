@@ -19,10 +19,6 @@ class UserNameViewController: UIViewController {
             let userGmail = user.email
             userDefaults.set(userGmail, forKey: "myGmail")
         }
-        
-        print(userDefaults.string(forKey: "myGmail")!)
-        print(userDefaults.string(forKey: "uuid")!)
-
     }
     
     @IBAction func decideButton() {
@@ -38,6 +34,10 @@ class UserNameViewController: UIViewController {
         let alert = UIAlertController(title: usernameTextField.text, message: "ユーザーネームはこちらでよろしいですか？", preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default){ (action: UIAlertAction) in
             self.userDefaults.set(self.usernameTextField.text!, forKey: "username")
+            let uuid = self.userDefaults.string(forKey: "uuid")
+            let username = self.usernameTextField.text!
+            let gmail = self.user?.email
+            self.ref.child("users").child(uuid!).setValue(["username":username,"gmail":gmail])
             self.toMainView()
         let cancel = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler: nil)
         }

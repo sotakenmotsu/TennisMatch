@@ -29,6 +29,7 @@ class PostViewController: UIViewController {
     let now = Date()
     let dateformatter = DateFormatter()
     var count :Int = 0
+    let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +66,8 @@ class PostViewController: UIViewController {
         let postername = post[4]
         let gmail = post[5]
         let days = dates
-        let members: [String] = []
+        var members = [String]()
+        members.append(userDefaults.string(forKey: "uuid")!)
 //        ref.child("data").observe(.value, with: { (snapshot) in
 //            for itemsnapshot in snapshot.children {
 //                let place = Post(snapshot: itemsnapshot as! DataSnapshot)?.place as! String
