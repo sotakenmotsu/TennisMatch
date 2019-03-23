@@ -12,6 +12,7 @@
 		C5191B4521EB73000013A7C4 /* UserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5191B4421EB73000013A7C4 /* UserNameViewController.swift */; };
 		C539872C21BA7BF000DAEEC8 /* blue-blurred-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C539872B21BA7BF000DAEEC8 /* blue-blurred-background.jpg */; };
 		C539873021BA86D900DAEEC8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C539872F21BA86D900DAEEC8 /* Login.storyboard */; };
+		C5601D3B22460FE700414269 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5601D3A22460FE700414269 /* CalendarViewController.swift */; };
 		C59AD6A52238FB5F001AD7BF /* Unlogined.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C59AD6A42238FB5F001AD7BF /* Unlogined.storyboard */; };
 		C59AD6A8223BA30D001AD7BF /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = C59AD6A6223BA30C001AD7BF /* login.png */; };
 		C59AD6A9223BA30D001AD7BF /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = C59AD6A7223BA30C001AD7BF /* refresh.png */; };
@@ -66,6 +67,7 @@
 		C539872B21BA7BF000DAEEC8 /* blue-blurred-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "blue-blurred-background.jpg"; sourceTree = SOURCE_ROOT; };
 		C539872F21BA86D900DAEEC8 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		C55AB7E921B14C0C00AD84E0 /* TennisMatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TennisMatch.entitlements; sourceTree = "<group>"; };
+		C5601D3A22460FE700414269 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		C59AD6A42238FB5F001AD7BF /* Unlogined.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Unlogined.storyboard; sourceTree = "<group>"; };
 		C59AD6A6223BA30C001AD7BF /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login.png; path = "../../TennisMatch素材/login.png"; sourceTree = "<group>"; };
 		C59AD6A7223BA30C001AD7BF /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refresh.png; path = "../../TennisMatch素材/refresh.png"; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				C5ED2068222932F700985D38 /* PrivacyViewController.swift */,
 				C5191B4421EB73000013A7C4 /* UserNameViewController.swift */,
 				C5DA5414219EE0010022A3B6 /* InviteContentsViewController.swift */,
+				C5601D3A22460FE700414269 /* CalendarViewController.swift */,
 				C5DA5416219EE00A0022A3B6 /* PostViewController.swift */,
 				C5DA5418219EE0240022A3B6 /* SearchViewController.swift */,
 				C5DA541A219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift */,
@@ -392,6 +395,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TennisMatch/Pods-TennisMatch-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CalculateCalendarLogic/CalculateCalendarLogic.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -403,6 +408,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CalculateCalendarLogic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -486,6 +493,7 @@
 				C5ED206722292E1000985D38 /* EULAViewController.swift in Sources */,
 				C5DA541B219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift in Sources */,
 				C5DA541D219EE0690022A3B6 /* JoinViewController.swift in Sources */,
+				C5601D3B22460FE700414269 /* CalendarViewController.swift in Sources */,
 				C5DA53DF219EDB950022A3B6 /* AppDelegate.swift in Sources */,
 				C5DA5415219EE0010022A3B6 /* InviteContentsViewController.swift in Sources */,
 				C5DA541F219EE0870022A3B6 /* Post.swift in Sources */,

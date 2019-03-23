@@ -33,41 +33,41 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        datePicker.datePickerMode = UIDatePicker.Mode.dateAndTime
-        datePicker.timeZone = NSTimeZone.local
-        datePicker.locale = Locale.current
-        dateTextField.inputView = datePicker
-        let datetoolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
-        let specialItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(InviteContentsViewController.done))
-        datetoolbar.setItems([specialItem, doneItem], animated: true)
+//        datePicker.datePickerMode = UIDatePicker.Mode.dateAndTime
+//        datePicker.timeZone = NSTimeZone.local
+//        datePicker.locale = Locale.current
+//        dateTextField.inputView = datePicker
+//        let datetoolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
+//        let specialItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+//        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(InviteContentsViewController.done))
+//        datetoolbar.setItems([specialItem, doneItem], animated: true)
         placeTextField.delegate = self
-        dateTextField.inputView = datePicker
+//        dateTextField.inputView = datePicker
         memberPickerView.delegate = self
         memberPickerView.dataSource = self
         memberPickerView.showsSelectionIndicator = true
         levelPickerView.delegate = self
         levelPickerView.dataSource = self
         levelPickerView.showsSelectionIndicator = true
-        startPickerView.delegate = self
-        startPickerView.dataSource = self
-        startPickerView.showsSelectionIndicator = true
-        endPickerView.delegate = self
-        endPickerView.dataSource = self
-        endPickerView.showsSelectionIndicator = true
+//        startPickerView.delegate = self
+//        startPickerView.dataSource = self
+//        startPickerView.showsSelectionIndicator = true
+//        endPickerView.delegate = self
+//        endPickerView.dataSource = self
+//        endPickerView.showsSelectionIndicator = true
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
         let normaldoneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(InviteContentsViewController.normaldone))
         let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(InviteContentsViewController.cancel))
-        toolbar.setItems([cancelItem, doneItem], animated: true)
-        self.dateTextField.inputAccessoryView = toolbar
+        toolbar.setItems([cancelItem, normaldoneItem], animated: true)
+//        self.dateTextField.inputAccessoryView = toolbar
         self.memberTextField.inputView = memberPickerView
         self.memberTextField.inputAccessoryView = toolbar
         self.levelTextField.inputView = levelPickerView
         self.levelTextField.inputAccessoryView = toolbar
-        self.startTimeTextField.inputView = startPickerView
-        self.startTimeTextField.inputAccessoryView = toolbar
-        self.endTimeTextField.inputView = endPickerView
-        self.endTimeTextField.inputAccessoryView = toolbar
+//        self.startTimeTextField.inputView = startPickerView
+//        self.startTimeTextField.inputAccessoryView = toolbar
+//        self.endTimeTextField.inputView = endPickerView
+//        self.endTimeTextField.inputAccessoryView = toolbar
         commentView.delegate = self
         
         dateformatter.dateFormat = "yyyy-MM-dd"
@@ -78,12 +78,12 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         placeTextField.text = ""
-        dateTextField.text = ""
+//        dateTextField.text = ""
         memberTextField.text = ""
         levelTextField.text = ""
         commentView.text = ""
-        startTimeTextField.text = ""
-        endTimeTextField.text = ""
+//        startTimeTextField.text = ""
+//        endTimeTextField.text = ""
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -112,17 +112,17 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
         self.levelTextField.endEditing(true)
         self.memberTextField.text = ""
         self.memberTextField.endEditing(true)
-        self.startTimeTextField.text = ""
-        self.startTimeTextField.endEditing(true)
-        self.endTimeTextField.text = ""
-        self.endTimeTextField.endEditing(true)
+//        self.startTimeTextField.text = ""
+//        self.startTimeTextField.endEditing(true)
+//        self.endTimeTextField.text = ""
+//        self.endTimeTextField.endEditing(true)
     }
     
     @objc func normaldone() {
         self.levelTextField.endEditing(true)
         self.memberTextField.endEditing(true)
-        self.startTimeTextField.endEditing(true)
-        self.endTimeTextField.endEditing(true)
+//        self.startTimeTextField.endEditing(true)
+//        self.endTimeTextField.endEditing(true)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -176,8 +176,8 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toPostViewController" {
-            let PostVC: PostViewController = segue.destination as! PostViewController
+        if segue.identifier == "toCalendarViewController" {
+            let PostVC: CalendarViewController = segue.destination as! CalendarViewController
             PostVC.post = sender as! [String]
         }
     }
@@ -185,12 +185,12 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
     @IBAction func postButton(_ sender: UIButton) {
         if placeTextField.text == "" || placeTextField.text == nil {
             self.showalert()
-        }else if dateTextField.text == "" || dateTextField.text == nil {
-            self.showalert()
-        }else if startTimeTextField.text == "" || startTimeTextField.text == nil {
-            self.showalert()
-        }else if endTimeTextField.text == "" || endTimeTextField.text == nil {
-            self.showalert()
+//        }else if dateTextField.text == "" || dateTextField.text == nil {
+//            self.showalert()
+//        }else if startTimeTextField.text == "" || startTimeTextField.text == nil {
+//            self.showalert()
+//        }else if endTimeTextField.text == "" || endTimeTextField.text == nil {
+//            self.showalert()
         }else if memberTextField.text == "" || memberTextField.text == nil {
             self.showalert()
         }else if levelTextField.text == "" || levelTextField.text == nil {
@@ -201,15 +201,15 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
             var post = [String]()
 //            let randomid = String(arc4random_uniform(1000))
             post.append(placeTextField.text!)
-            post.append(dateTextField.text!)
-            post.append(startTimeTextField.text!)
-            post.append(endTimeTextField.text!)
+//            post.append(dateTextField.text!)
+//            post.append(startTimeTextField.text!)
+//            post.append(endTimeTextField.text!)
             post.append(memberTextField.text!)
             post.append(levelTextField.text!)
             post.append(commentView.text!)
             post.append(userDefaults.string(forKey: "username")!)
             post.append(userDefaults.string(forKey: "myGmail")!)
-            self.performSegue(withIdentifier: "toPostViewController", sender: post)
+            self.performSegue(withIdentifier: "toCalendarViewController", sender: post)
         }
     }
 }

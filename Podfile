@@ -13,6 +13,8 @@ target 'TennisMatch' do
   pod 'Firebase/Messaging'
   pod 'GoogleSignIn'
   pod 'SVProgressHUD'
+  pod 'FSCalendar'
+  pod 'CalculateCalendarLogic' 
 
   target 'TennisMatchTests' do
     inherit! :search_paths
