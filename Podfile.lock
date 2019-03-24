@@ -85,6 +85,7 @@ PODS:
   - GTMSessionFetcher/Core (1.2.0)
   - GTMSessionFetcher/Full (1.2.0):
     - GTMSessionFetcher/Core (= 1.2.0)
+  - KRTournamentView (1.0.2)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -102,6 +103,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - FSCalendar
   - GoogleSignIn
+  - KRTournamentView
   - SVProgressHUD
 
 SPEC REPOS:
@@ -122,6 +124,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMOAuth2
     - GTMSessionFetcher
+    - KRTournamentView
     - leveldb-library
     - nanopb
     - Protobuf
@@ -144,11 +147,12 @@ SPEC CHECKSUMS:
   GoogleUtilities: 6f681e27050c5e130325e89fa0316dfca826f954
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
+  KRTournamentView: 410122526d1c38d103cf0a7388f8ce8626604612
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: b8e4fa1a6705db9160b82049a118ff9e5740b88b
+PODFILE CHECKSUM: 3fac9e777582740e546d59b7b60df2a9ddb3dbc5
 
 COCOAPODS: 1.5.3

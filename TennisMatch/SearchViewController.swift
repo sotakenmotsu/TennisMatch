@@ -17,7 +17,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     var ref: DatabaseReference!
     let user = Auth.auth().currentUser
     let dateformatter = DateFormatter()
-    var posts = [[String]]()
+    var posts = [Post]()
     var selectedpost = [String]()
     var firstTime: Bool = true
     var loginButtonBool: Bool = false
@@ -34,18 +34,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         if posts.count == 0 {
             ref.child("data").observe(.value, with: { (snapshot) in
                 for itemsnapshot in snapshot.children {
-                    let place = Post(snapshot: itemsnapshot as! DataSnapshot)?.place as! String
-//                    let date = Post(snapshot: itemsnapshot as! DataSnapshot)?.date as! String
-//                    let startTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.startTime as! String
-//                    let endTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.endTime as! String
-                    let member = Post(snapshot: itemsnapshot as! DataSnapshot)?.member as! String
-                    let level = Post(snapshot: itemsnapshot as! DataSnapshot)?.level as! String
-                    let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
-                    let gmail = Post(snapshot: itemsnapshot as! DataSnapshot)?.gmail as! String
-                    let dates = Post(snapshot: itemsnapshot as! DataSnapshot)?.dates as! [String]
-                    let members = Post(snapshot: itemsnapshot as! DataSnapshot)?.members as! [String]
-                    self.posts.append([place,member,level,comment,gmail,dates,members])
-                    print(self.posts)
+                    let post = Post(snapshot: itemsnapshot as! DataSnapshot) as! Post
+                    self.posts.append(post)
                 }
                 self.tableView.reloadData()
                 SVProgressHUD.dismiss()
@@ -62,18 +52,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             
             ref.child("data").observe(.value, with: { (snapshot) in
                 for itemsnapshot in snapshot.children {
-                    let place = Post(snapshot: itemsnapshot as! DataSnapshot)?.place as! String
-//                    let date = Post(snapshot: itemsnapshot as! DataSnapshot)?.date as! String
-//                    let startTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.startTime as! String
-//                    let endTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.endTime as! String
-                    let member = Post(snapshot: itemsnapshot as! DataSnapshot)?.member as! String
-                    let level = Post(snapshot: itemsnapshot as! DataSnapshot)?.level as! String
-                    let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
-                    let gmail = Post(snapshot: itemsnapshot as! DataSnapshot)?.gmail as! String
-                    let dates = Post(snapshot: itemsnapshot as! DataSnapshot)?.dates as! [String]
-                    let members = Post(snapshot: itemsnapshot as! DataSnapshot)?.members as! [String]
-                    self.posts.append([place,member,level,comment,gmail,dates,members])
-                    print(self.posts)
+                    let post = Post(snapshot: itemsnapshot as! DataSnapshot)
+                    self.posts.append(post!)
                 }
             } )
             
@@ -93,9 +73,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         if self.posts.count == 0 {
             
         } else {
-            cell.placeLabel.text = self.posts[indexPath.row][0]
-            cell.startLabel.text = self.posts[indexPath.row][2]
-            cell.endLabel.text = self.posts[indexPath.row][3]
+            cell.placeLabel.text = self.posts[indexPath.row].place
+            cell.memberLabel.text = self.posts[indexPath.row].member
         }
         return cell
     }
@@ -105,13 +84,15 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toJoinViewController", sender: posts[indexPath.row])
+        performSegue(withIdentifier: "toJoinViewController", sender: (posts[indexPath.row],indexPath.row))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toJoinViewController" {
             let JoinVC: JoinViewController = segue.destination as! JoinViewController
-            JoinVC.post = sender as! [String]
+            let selectedSender = sender as! (Post,Int)
+            JoinVC.post = selectedSender.0
+            JoinVC.childNumber = selectedSender.1
         }
     }
     
@@ -120,18 +101,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         posts.removeAll()
         ref.child("data").observe(.value, with: { (snapshot) in
             for itemsnapshot in snapshot.children {
-                let place = Post(snapshot: itemsnapshot as! DataSnapshot)?.place as! String
-//                let date = Post(snapshot: itemsnapshot as! DataSnapshot)?.date as! String
-//                let startTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.startTime as! String
-//                let endTime = Post(snapshot: itemsnapshot as! DataSnapshot)?.endTime as! String
-                let member = Post(snapshot: itemsnapshot as! DataSnapshot)?.member as! String
-                let level = Post(snapshot: itemsnapshot as! DataSnapshot)?.level as! String
-                let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
-                let gmail = Post(snapshot: itemsnapshot as! DataSnapshot)?.gmail as! String
-                let dates = Post(snapshot: itemsnapshot as! DataSnapshot)?.dates as! [String]
-                let members = Post(snapshot: itemsnapshot as! DataSnapshot)?.members as! [String]
-                self.posts.append([place,member,level,comment,gmail,dates,members])
-               
+                let post = Post(snapshot: itemsnapshot as! DataSnapshot)
+                self.posts.append(post!)
             }
             self.tableView.reloadData()
             SVProgressHUD.dismiss()

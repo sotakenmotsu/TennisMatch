@@ -26,7 +26,6 @@ class CalendarViewController: UIViewController,FSCalendarDelegate, FSCalendarDat
         self.calendar!.delegate = self
         self.calendar!.dataSource = self
 
-        // Do any additional setup after loading the view.
     }
     
     fileprivate let gregorian: Calendar = Calendar(identifier: .gregorian)
@@ -94,7 +93,6 @@ class CalendarViewController: UIViewController,FSCalendarDelegate, FSCalendarDat
             day3.text = "\(year)/\(month)/\(day)"
             dates.append("\(year)/\(month)/\(day)")
         }
-        print(dates)
     }
     
     @IBAction func cancel() {

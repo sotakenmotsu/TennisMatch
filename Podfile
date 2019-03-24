@@ -15,6 +15,7 @@ target 'TennisMatch' do
   pod 'SVProgressHUD'
   pod 'FSCalendar'
   pod 'CalculateCalendarLogic' 
+  pod 'KRTournamentView'
 
   target 'TennisMatchTests' do
     inherit! :search_paths

@@ -7,35 +7,42 @@
 //
 
 import UIKit
+import Firebase
 
 class JoinViewController: UIViewController {
     
     @IBOutlet var placeLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var starttimeLabel: UILabel!
-    @IBOutlet var endtimeLabel: UILabel!
     @IBOutlet var memberLabel: UILabel!
     @IBOutlet var levelLabel: UILabel!
-    @IBOutlet var commentLabel: UILabel!
-    @IBOutlet var gmailLabel: UILabel!
-    var post = [String]()
+    @IBOutlet var commentTextView: UITextView!
+    @IBOutlet var day1Label: UILabel!
+    @IBOutlet var day2Label: UILabel!
+    @IBOutlet var day3Label: UILabel!
+    var post: Post!
+    var childNumber: Int!
+    var ref: DatabaseReference!
+    var members = [String]()
+    let userDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(post)
-        placeLabel.text = post[0]
-        dateLabel.text = post[1]
-        starttimeLabel.text = post[2]
-        endtimeLabel.text = post[3]
-        memberLabel.text = post[4]
-        levelLabel.text = post[5]
-        commentLabel.text = post[6]
-        gmailLabel.text = post[7]
+        ref = Database.database().reference()
+        
+        placeLabel.text = post.place
+        memberLabel.text = post.member
+        levelLabel.text = post.level
+        commentTextView.text = post.comment
+        day1Label.text = post.dates[0]
+        day2Label.text = post.dates[1]
+        day3Label.text = post.dates[2]
+        members = post.members
+        members.append(userDefaults.string(forKey: "uuid")!)
 
     }
     
     @IBAction func joinButton() {
-        
+        ref.child("data").child("\(childNumber!)").updateChildValues(["members":members])
     }
+    
 }

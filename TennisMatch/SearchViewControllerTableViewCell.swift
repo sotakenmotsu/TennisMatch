@@ -11,8 +11,7 @@ import UIKit
 class SearchViewControllerTableViewCell: UITableViewCell {
     
     @IBOutlet var placeLabel: UILabel!
-    @IBOutlet var startLabel: UILabel!
-    @IBOutlet var endLabel: UILabel!
+    @IBOutlet var memberLabel: UILabel!
 
 
     override func awakeFromNib() {

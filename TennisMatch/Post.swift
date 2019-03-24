@@ -11,7 +11,7 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 
-class Post{
+class Post {
     var ref: DatabaseReference!
     var place: String!
 //    var date: String!
@@ -28,19 +28,13 @@ class Post{
         ref = snapshot.ref
         guard let dict = snapshot.value as? [String:Any] else { return nil }
         guard let place = dict["place"] as? String else { return nil }
-//        guard let date = dict["date"] as? String else { return nil }
-//        guard let startTime = dict["startTime"] as? String else { return nil }
-//        guard let endTime = dict["endTime"] as? String else { return nil }
         guard let member = dict["member"] as? String else { return nil }
         guard let level = dict["level"] as? String else { return nil }
         guard let comment = dict["comment"] as? String else { return nil }
         guard let gmail = dict["gmail"] as? String else { return nil }
-        guard let dates = dict["dates"] as? [String] else { return nil }
+        guard let dates = dict["days"] as? [String] else { return nil }
         guard let members = dict["members"] as? [String] else { return nil }
         self.place = place
-//        self.date = date
-//        self.startTime = startTime
-//        self.endTime = endTime
         self.member = member
         self.level = level
         self.comment = comment
