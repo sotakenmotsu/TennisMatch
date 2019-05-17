@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewControllerTableViewCell: UITableViewCell {
+class CustomTableViewCell: UITableViewCell {
     
     @IBOutlet var placeLabel: UILabel!
     @IBOutlet var memberLabel: UILabel!

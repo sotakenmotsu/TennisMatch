@@ -12,6 +12,7 @@
 		C5191B4521EB73000013A7C4 /* UserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5191B4421EB73000013A7C4 /* UserNameViewController.swift */; };
 		C539872C21BA7BF000DAEEC8 /* blue-blurred-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C539872B21BA7BF000DAEEC8 /* blue-blurred-background.jpg */; };
 		C539873021BA86D900DAEEC8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C539872F21BA86D900DAEEC8 /* Login.storyboard */; };
+		C540B79D2247582C00142097 /* MyTournamentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C540B79C2247582C00142097 /* MyTournamentsViewController.swift */; };
 		C5601D3B22460FE700414269 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5601D3A22460FE700414269 /* CalendarViewController.swift */; };
 		C59AD6A52238FB5F001AD7BF /* Unlogined.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C59AD6A42238FB5F001AD7BF /* Unlogined.storyboard */; };
 		C59AD6A8223BA30D001AD7BF /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = C59AD6A6223BA30C001AD7BF /* login.png */; };
@@ -26,7 +27,7 @@
 		C5DA5415219EE0010022A3B6 /* InviteContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA5414219EE0010022A3B6 /* InviteContentsViewController.swift */; };
 		C5DA5417219EE00A0022A3B6 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA5416219EE00A0022A3B6 /* PostViewController.swift */; };
 		C5DA5419219EE0240022A3B6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA5418219EE0240022A3B6 /* SearchViewController.swift */; };
-		C5DA541B219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA541A219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift */; };
+		C5DA541B219EE04C0022A3B6 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA541A219EE04C0022A3B6 /* CustomTableViewCell.swift */; };
 		C5DA541D219EE0690022A3B6 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA541C219EE0690022A3B6 /* JoinViewController.swift */; };
 		C5DA541F219EE0870022A3B6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA541E219EE0870022A3B6 /* Post.swift */; };
 		C5ED20632226DB0200985D38 /* 5SLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5ED20622226DB0200985D38 /* 5SLogin.storyboard */; };
@@ -66,6 +67,7 @@
 		C5191B4421EB73000013A7C4 /* UserNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameViewController.swift; sourceTree = "<group>"; };
 		C539872B21BA7BF000DAEEC8 /* blue-blurred-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "blue-blurred-background.jpg"; sourceTree = SOURCE_ROOT; };
 		C539872F21BA86D900DAEEC8 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		C540B79C2247582C00142097 /* MyTournamentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTournamentsViewController.swift; sourceTree = "<group>"; };
 		C55AB7E921B14C0C00AD84E0 /* TennisMatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TennisMatch.entitlements; sourceTree = "<group>"; };
 		C5601D3A22460FE700414269 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		C59AD6A42238FB5F001AD7BF /* Unlogined.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Unlogined.storyboard; sourceTree = "<group>"; };
@@ -87,7 +89,7 @@
 		C5DA5414219EE0010022A3B6 /* InviteContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteContentsViewController.swift; sourceTree = "<group>"; };
 		C5DA5416219EE00A0022A3B6 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		C5DA5418219EE0240022A3B6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		C5DA541A219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTableViewCell.swift; sourceTree = "<group>"; };
+		C5DA541A219EE04C0022A3B6 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		C5DA541C219EE0690022A3B6 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		C5DA541E219EE0870022A3B6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C5ED20622226DB0200985D38 /* 5SLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = 5SLogin.storyboard; sourceTree = "<group>"; };
@@ -191,9 +193,10 @@
 				C5601D3A22460FE700414269 /* CalendarViewController.swift */,
 				C5DA5416219EE00A0022A3B6 /* PostViewController.swift */,
 				C5DA5418219EE0240022A3B6 /* SearchViewController.swift */,
-				C5DA541A219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift */,
+				C5DA541A219EE04C0022A3B6 /* CustomTableViewCell.swift */,
 				C5DA541C219EE0690022A3B6 /* JoinViewController.swift */,
 				C5DA541E219EE0870022A3B6 /* Post.swift */,
+				C540B79C2247582C00142097 /* MyTournamentsViewController.swift */,
 				C5F831FC21E8989F0048AEFF /* TestLoginViewController.swift */,
 				C5DA53E5219EDB960022A3B6 /* Assets.xcassets */,
 				C539872B21BA7BF000DAEEC8 /* blue-blurred-background.jpg */,
@@ -299,6 +302,9 @@
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -492,8 +498,9 @@
 				C5F831FF21E8B14A0048AEFF /* LoginViewControllerS.swift in Sources */,
 				C5DA5419219EE0240022A3B6 /* SearchViewController.swift in Sources */,
 				C5191B4521EB73000013A7C4 /* UserNameViewController.swift in Sources */,
+				C540B79D2247582C00142097 /* MyTournamentsViewController.swift in Sources */,
 				C5ED206722292E1000985D38 /* EULAViewController.swift in Sources */,
-				C5DA541B219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift in Sources */,
+				C5DA541B219EE04C0022A3B6 /* CustomTableViewCell.swift in Sources */,
 				C5DA541D219EE0690022A3B6 /* JoinViewController.swift in Sources */,
 				C5601D3B22460FE700414269 /* CalendarViewController.swift in Sources */,
 				C5DA53DF219EDB950022A3B6 /* AppDelegate.swift in Sources */,

@@ -12,7 +12,7 @@ class PostViewController: UIViewController {
     @IBOutlet var day1: UILabel!
     @IBOutlet var day2: UILabel!
     @IBOutlet var day3: UILabel!
-    var post = [String]()
+    var post = [Any]()
     var dates = [String]()
     var ref: DatabaseReference!
     let user = Auth.auth().currentUser
@@ -24,10 +24,10 @@ class PostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        placeView.text = post[0]
-        memberView.text = post[1]
-        levelView.text = post[2]
-        commentView.text = post[3]
+        placeView.text = post[0] as! String
+        memberView.text = post[1] as! String
+        levelView.text = post[2] as! String
+        commentView.text = post[3] as! String
         ref = Database.database().reference()
         dateformatter.dateFormat = "yyyy-MM-dd"
         day1.text = dates[0]
@@ -47,9 +47,18 @@ class PostViewController: UIViewController {
         let comment = post[3]
         let postername = post[4]
         let gmail = post[5]
+        let maxmember = post[6]
         let days = dates
         var members = [String]()
         members.append(userDefaults.string(forKey: "uuid")!)
+        if userDefaults.object(forKey: "joinedPostNumbers") != nil {
+            var joinedPosts = userDefaults.array(forKey: "joinedPostNumbers")
+            joinedPosts?.append(self.count + 1)
+            userDefaults.removeObject(forKey: "joinedPostNumbers")
+            userDefaults.set(joinedPosts, forKey: "joinedPostNumbers")
+        } else {
+            userDefaults.set(self.count + 1, forKey: "joinedPostNumbers")
+        }
         ref.child("data").child("\(self.count + 1)").setValue(["place":place,
                                                     "member":member,
                                                     "level":level,
@@ -58,7 +67,8 @@ class PostViewController: UIViewController {
                                                     "postername":postername,
                                                     "gmail":gmail,
                                                     "days":days,
-                                                    "members":members])
+                                                    "members":members,
+                                                    "maxmember":maxmember])
         self.showAlert()
     }
     

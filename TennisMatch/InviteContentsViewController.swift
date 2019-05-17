@@ -19,6 +19,7 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
     var level: Int = 0
     @IBOutlet var commentView: UITextView!
     let userDefaults = UserDefaults.standard
+    var maxmember: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +84,7 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
         if pickerView == levelPickerView {
             return 5
         } else {
-            return 30
+            return 3
         }
     }
     
@@ -91,7 +92,13 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
         if pickerView == levelPickerView {
             return "Lv.\(row)"
         } else {
-            return "\(row)人"
+            if row == 0 {
+                return "4人"
+            } else if row == 1 {
+                return "8人"
+            } else {
+                return "16人"
+            }
         }
     }
     
@@ -99,9 +106,17 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
         if pickerView == levelPickerView {
             self.levelTextField.text = "Lv.\(row)"
             self.level = row
-        }else if pickerView == memberPickerView {
-            self.memberTextField.text = "\(row)人"
-            self.member = row
+        } else if pickerView == memberPickerView {
+            if row == 0 {
+                self.memberTextField.text = "4人"
+                self.member = 4
+            } else if row == 1 {
+                self.memberTextField.text = "8人"
+                self.member = 8
+            } else {
+                self.memberTextField.text = "16人"
+                self.member = 16
+            }
         }
     }
     
@@ -114,7 +129,7 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCalendarViewController" {
             let PostVC: CalendarViewController = segue.destination as! CalendarViewController
-            PostVC.post = sender as! [String]
+            PostVC.post = sender as! [Any]
         }
     }
     
@@ -128,13 +143,14 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
         }else if commentView.text == "" || commentView.text == nil {
             self.showalert()
         }else{
-            var post = [String]()
+            var post = [Any]()
             post.append(placeTextField.text!)
             post.append(memberTextField.text!)
             post.append(levelTextField.text!)
             post.append(commentView.text!)
             post.append(userDefaults.string(forKey: "username")!)
             post.append(userDefaults.string(forKey: "myGmail")!)
+            post.append(member)
             self.performSegue(withIdentifier: "toCalendarViewController", sender: post)
         }
     }

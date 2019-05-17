@@ -18,7 +18,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate, FSCalendarDat
     @IBOutlet var day2: UILabel!
     @IBOutlet var day3: UILabel!
     var dates = [String]()
-    var post = [String]()
+    var post = [Any]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,7 +106,7 @@ class CalendarViewController: UIViewController,FSCalendarDelegate, FSCalendarDat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toPostViewController" {
             let PostVC: PostViewController = segue.destination as! PostViewController
-            let castedSender = sender as! ([String], [String])
+            let castedSender = sender as! ([Any], [String])
             PostVC.post = castedSender.0
             PostVC.dates = castedSender.1
         }

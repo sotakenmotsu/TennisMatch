@@ -69,7 +69,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "searchViewCell", for: indexPath) as! SearchViewControllerTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchViewCell", for: indexPath) as! CustomTableViewCell
         if self.posts.count == 0 {
             
         } else {

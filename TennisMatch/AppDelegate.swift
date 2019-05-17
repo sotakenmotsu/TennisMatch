@@ -17,11 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     var window: UIWindow?
     let userDefaults = UserDefaults.standard
+//    var ref: DatabaseReference!
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let display: CGRect = UIScreen.main.bounds
+//        ref = Database.database().reference()
+        application.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
         
         FirebaseApp.configure()
         
@@ -113,6 +116,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         print(userInfo)
         completionHandler(UIBackgroundFetchResult.newData)
     }
+    
+//    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+//        
+//        ref.child("data").observe(.value, with: { (snapshot) in
+//            for itemsnapshot in snapshot.children {
+//                let post = Post(snapshot: itemsnapshot as! DataSnapshot) as! Post
+//            }
+//        } )
+//    }
 }
 
 @available(iOS 10, *)

@@ -43,6 +43,15 @@ class JoinViewController: UIViewController {
     
     @IBAction func joinButton() {
         ref.child("data").child("\(childNumber!)").updateChildValues(["members":members])
+        if userDefaults.object(forKey: "joinedPostNumbers") != nil {
+            var joinedPosts = userDefaults.array(forKey: "joinedPostNumbers")
+            joinedPosts?.append(childNumber!)
+            userDefaults.removeObject(forKey: "joinedPostNumbers")
+            userDefaults.set(joinedPosts, forKey: "joinedPostNumbers")
+        } else {
+            userDefaults.set(childNumber!, forKey: "joinedPostNumbers")
+            // 自分の名前があるpostのみ取得する。出力
+        }
     }
     
 }
