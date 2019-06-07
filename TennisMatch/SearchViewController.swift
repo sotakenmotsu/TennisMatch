@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import SVProgressHUD
+import FirebaseAuth
 
 class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
@@ -92,6 +93,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             cell.placeLabel.text = self.posts[indexPath.row][0]
             cell.startLabel.text = self.posts[indexPath.row][2]
             cell.endLabel.text = self.posts[indexPath.row][3]
+            cell.dateLabel.text = self.posts[indexPath.row][1]
+            cell.favoriteMark.
         }
         return cell
     }
@@ -101,13 +104,17 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toJoinViewController", sender: posts[indexPath.row])
+//        let sendData: [Any] = [posts[indexPath.row],indexPath.row]
+        performSegue(withIdentifier: "toJoinViewController", sender: indexPath.row)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toJoinViewController" {
             let JoinVC: JoinViewController = segue.destination as! JoinViewController
-            JoinVC.post = sender as! [String]
+            let indexNumber = sender as? Int
+            JoinVC.post = posts[indexNumber!]
+            JoinVC.postnumber = indexNumber!
+            
         }
     }
     

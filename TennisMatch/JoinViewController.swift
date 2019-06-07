@@ -19,6 +19,8 @@ class JoinViewController: UIViewController {
     @IBOutlet var commentLabel: UILabel!
     @IBOutlet var gmailLabel: UILabel!
     var post = [String]()
+    let userDefaults = UserDefaults.standard
+    var postnumber: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,14 +40,17 @@ class JoinViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func favorite() {
+        if userDefaults.object(forKey: "favorite") == nil {
+            let favorite: [Int] = [postnumber]
+            userDefaults.set(favorite, forKey: "favorite")
+            userDefaults.synchronize()
+        } else {
+            var favorite: [Int] = userDefaults.array(forKey: "favorite") as! [Int]
+            favorite.append(postnumber)
+            userDefaults.removeObject(forKey: "favorite")
+            userDefaults.set(favorite, forKey: "favorite")
+            userDefaults.synchronize()
+        }
     }
-    */
-
 }

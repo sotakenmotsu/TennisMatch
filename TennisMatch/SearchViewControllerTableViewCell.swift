@@ -13,6 +13,8 @@ class SearchViewControllerTableViewCell: UITableViewCell {
     @IBOutlet var placeLabel: UILabel!
     @IBOutlet var startLabel: UILabel!
     @IBOutlet var endLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var favoriteMark: UIImage!
 
 
     override func awakeFromNib() {
