@@ -490,6 +490,7 @@
                                         <connections>
                                             <outlet property="dateLabel" destination="JzO-C6-RaP" id="MPq-Cc-mOQ"/>
                                             <outlet property="endLabel" destination="dnb-4s-yIP" id="ehw-Qk-iVN"/>
+                                            <outlet property="favoriteMark" destination="JIo-Fy-oyF" id="cXG-3u-C7i"/>
                                             <outlet property="placeLabel" destination="Jq6-1b-wGe" id="D4H-GF-Hy8"/>
                                             <outlet property="startLabel" destination="qOU-La-4cQ" id="6QU-XK-SWS"/>
                                         </connections>
@@ -659,12 +660,12 @@
                                     <constraint firstAttribute="width" constant="193" id="YnG-Z0-0VJ"/>
                                     <constraint firstAttribute="height" constant="63" id="vFO-iz-dW6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="お気に入り">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="favorite" destination="pWP-1J-8ce" eventType="touchUpInside" id="ArJ-ZX-t8z"/>
+                                    <action selector="favoButton" destination="pWP-1J-8ce" eventType="touchUpInside" id="FRT-Sy-8Xn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyH-32-Ma2">
@@ -727,6 +728,7 @@
                         <outlet property="commentLabel" destination="1fY-cQ-uAb" id="lfF-PK-V42"/>
                         <outlet property="dateLabel" destination="7Z7-ls-YAM" id="jz8-Ha-Sal"/>
                         <outlet property="endtimeLabel" destination="Smp-Fl-n1m" id="IYC-iX-33b"/>
+                        <outlet property="favoriteButton" destination="Oqq-FV-sMJ" id="Oeq-nI-5gC"/>
                         <outlet property="gmailLabel" destination="LyH-32-Ma2" id="Dvi-gB-B1K"/>
                         <outlet property="levelLabel" destination="rU8-BI-2u5" id="0Uh-Wa-3H9"/>
                         <outlet property="memberLabel" destination="WlM-yh-VRO" id="9ml-AA-R4O"/>

@@ -14,7 +14,7 @@ class SearchViewControllerTableViewCell: UITableViewCell {
     @IBOutlet var startLabel: UILabel!
     @IBOutlet var endLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var favoriteMark: UIImage!
+    @IBOutlet var favoriteMark: UIImageView!
 
 
     override func awakeFromNib() {

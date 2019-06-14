@@ -22,6 +22,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     var selectedpost = [String]()
     var firstTime: Bool = true
     var loginButtonBool: Bool = false
+    let userDefaults = UserDefaults.standard
+    var favorite: [Int] = []
+    var favoriteArray: [Bool] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +52,11 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 self.tableView.reloadData()
                 SVProgressHUD.dismiss()
             } )
+        }
+        
+        if userDefaults.object(forKey: "favorite") == nil {
+            userDefaults.set(favorite, forKey: "favorite")
+        } else {
         }
         
     }
@@ -94,7 +102,22 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             cell.startLabel.text = self.posts[indexPath.row][2]
             cell.endLabel.text = self.posts[indexPath.row][3]
             cell.dateLabel.text = self.posts[indexPath.row][1]
-            cell.favoriteMark.
+            favorite = userDefaults.array(forKey: "favorite") as! [Int] 
+            if favorite.count == 0 {
+                favoriteArray.append(false)
+                cell.favoriteMark.isHidden = true
+            } else {
+                print(favorite)
+                for i in favorite {
+                    if i == indexPath.row {
+                        favoriteArray.append(true)
+                        cell.favoriteMark.isHidden = false
+                    } else {
+                        favoriteArray.append(false)
+                        cell.favoriteMark.isHidden = true
+                    }
+                }
+            }
         }
         return cell
     }
@@ -105,6 +128,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let sendData: [Any] = [posts[indexPath.row],indexPath.row]
+//        print(favoriteArray[indexPath.row])
         performSegue(withIdentifier: "toJoinViewController", sender: indexPath.row)
     }
     
@@ -114,7 +138,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             let indexNumber = sender as? Int
             JoinVC.post = posts[indexNumber!]
             JoinVC.postnumber = indexNumber!
-            
+            JoinVC.whetherfav = favoriteArray[indexNumber!]
         }
     }
     
