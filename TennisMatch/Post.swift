@@ -21,6 +21,7 @@ class Post{
     var level: String!
     var comment: String!
     var gmail: String!
+    var postnumber: String!
     
     init? (snapshot: DataSnapshot) {
         ref = snapshot.ref
@@ -33,6 +34,7 @@ class Post{
         guard let level = dict["level"] as? String else { return nil }
         guard let comment = dict["comment"] as? String else { return nil }
         guard let gmail = dict["gmail"] as? String else { return nil }
+        guard let postnumber = dict["postnumber"] as? String else { return nil }
         self.place = place
         self.date = date
         self.startTime = startTime
@@ -41,6 +43,7 @@ class Post{
         self.level = level
         self.comment = comment
         self.gmail = gmail
+        self.postnumber = postnumber
     }
 }
 

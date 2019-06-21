@@ -22,8 +22,7 @@ class JoinViewController: UIViewController {
     let userDefaults = UserDefaults.standard
     var postnumber: Int!
     @IBOutlet var favoriteButton: UIButton!
-    @IBOutlet var deletefavoriteButton: UIButton!
-    var whetherfav: Bool!
+    var isFaved: Bool!
     var favoriteArray: [Int] = []
 
     override func viewDidLoad() {
@@ -40,7 +39,7 @@ class JoinViewController: UIViewController {
         gmailLabel.text = post[7]
         
         favoriteArray = userDefaults.array(forKey: "favorite") as! [Int]
-        if whetherfav == false {
+        if !isFaved {
             favoriteButton.setTitle("お気に入り", for: .normal)
             favoriteButton.setTitleColor(UIColor.white, for: .normal)
         } else {
@@ -53,7 +52,7 @@ class JoinViewController: UIViewController {
     }
     
     @IBAction func favoButton() {
-        if whetherfav == false {
+        if !isFaved {
             self.favorite()
         } else {
             self.deletefavorite()
@@ -72,7 +71,7 @@ class JoinViewController: UIViewController {
             userDefaults.set(favorite, forKey: "favorite")
             userDefaults.synchronize()
         }
-        whetherfav = true
+        isFaved = true
         favoriteButton.setTitle("お気に入り解除", for: .normal)
         favoriteButton.setTitleColor(UIColor.white, for: .normal)
     }
@@ -88,8 +87,11 @@ class JoinViewController: UIViewController {
         userDefaults.removeObject(forKey: "favorite")
         userDefaults.set(newfavorite, forKey: "favorite")
         userDefaults.synchronize()
-        whetherfav = false
+        isFaved = false
         favoriteButton.setTitle("お気に入り", for: .normal)
         favoriteButton.setTitleColor(UIColor.white, for: .normal)
     }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//    }
 }

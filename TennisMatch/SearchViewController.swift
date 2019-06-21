@@ -25,9 +25,12 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     let userDefaults = UserDefaults.standard
     var favorite: [Int] = []
     var favoriteArray: [Bool] = []
+    var numberArray: [Int] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         SVProgressHUD.show()
         self.tableView.rowHeight = 99
@@ -46,9 +49,12 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     let level = Post(snapshot: itemsnapshot as! DataSnapshot)?.level as! String
                     let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
                     let gmail = Post(snapshot: itemsnapshot as! DataSnapshot)?.gmail as! String
-                    self.posts.append([place,date,startTime,endTime,member,level,comment,gmail])
+                    let postnumber = Post(snapshot: itemsnapshot as! DataSnapshot)?.postnumber as! String
+                    self.posts.append([place,date,startTime,endTime,member,level,comment,gmail,postnumber])
+                    self.numberArray.append(Int(postnumber)!)
                     print(self.posts)
                 }
+                
                 self.tableView.reloadData()
                 SVProgressHUD.dismiss()
             } )
@@ -64,6 +70,10 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        favoriteArray = []
+        numberArray = []
+        tableView.reloadData()
+        
         if !firstTime {
             posts.removeAll()
             
@@ -77,7 +87,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     let level = Post(snapshot: itemsnapshot as! DataSnapshot)?.level as! String
                     let comment = Post(snapshot: itemsnapshot as! DataSnapshot)?.comment as! String
                     let gmail = Post(snapshot: itemsnapshot as! DataSnapshot)?.gmail as! String
-                    self.posts.append([place,date,startTime,endTime,member,level,comment,gmail])
+                    let postnumber = Post(snapshot: itemsnapshot as! DataSnapshot)?.postnumber as! String
+                    self.posts.append([place,date,startTime,endTime,member,level,comment,gmail,postnumber])
+                    self.numberArray.append(Int(postnumber)!)
                     print(self.posts)
                 }
             } )
@@ -108,8 +120,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 cell.favoriteMark.isHidden = true
             } else {
                 print(favorite)
+                print(numberArray)
                 for i in favorite {
-                    if i == indexPath.row {
+                    if i == numberArray[indexPath.row] {
                         favoriteArray.append(true)
                         cell.favoriteMark.isHidden = false
                     } else {
@@ -117,6 +130,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                         cell.favoriteMark.isHidden = true
                     }
                 }
+                print(favoriteArray)
             }
         }
         return cell
@@ -127,8 +141,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let sendData: [Any] = [posts[indexPath.row],indexPath.row]
-//        print(favoriteArray[indexPath.row])
         performSegue(withIdentifier: "toJoinViewController", sender: indexPath.row)
     }
     
@@ -137,8 +149,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             let JoinVC: JoinViewController = segue.destination as! JoinViewController
             let indexNumber = sender as? Int
             JoinVC.post = posts[indexNumber!]
-            JoinVC.postnumber = indexNumber!
-            JoinVC.whetherfav = favoriteArray[indexNumber!]
+            JoinVC.postnumber = numberArray[indexNumber!]
+            JoinVC.isFaved = favoriteArray[indexNumber!]
         }
     }
     

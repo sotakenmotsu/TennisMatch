@@ -59,14 +59,14 @@ class PostViewController: UIViewController {
         let comment = post[6]
         let postername = post[7]
         let gmail = post[8]
-        ref.child("data").observe(.value, with: { (snapshot) in
-            
-            for itemsnapshot in snapshot.children {
-                let place = Post(snapshot: itemsnapshot as! DataSnapshot)?.place as! String
-                self.post.append(place)
-                print(self.post)
-            }
-        })
+//        ref.child("data").observe(.value, with: { (snapshot) in
+//
+//            for itemsnapshot in snapshot.children {
+//                let place = Post(snapshot: itemsnapshot as! DataSnapshot)?.place as! String
+//                self.post.append(place)
+//                print(self.post)
+//            }
+//        })
         ref.child("data").child("\(self.count + 1)").setValue(["place":place,
                                                     "date":date,
                                                     "startTime":starttime,
@@ -76,7 +76,8 @@ class PostViewController: UIViewController {
                                                     "comment":comment,
                                                     "postdate":dateformatter.string(from: now),
                                                     "postername":postername,
-                                                    "gmail":gmail])
+                                                    "gmail":gmail,
+                                                    "postnumber":String(self.count + 1)])
         self.showAlert()
     }
     
