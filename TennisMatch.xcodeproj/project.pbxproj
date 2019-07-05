@@ -14,8 +14,6 @@
 		C539873021BA86D900DAEEC8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C539872F21BA86D900DAEEC8 /* Login.storyboard */; };
 		C543822E22AA61A300296967 /* whitecircle.png in Resources */ = {isa = PBXBuildFile; fileRef = C543822D22AA61A300296967 /* whitecircle.png */; };
 		C543823022AA63CC00296967 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C543822F22AA63CC00296967 /* HomeViewController.swift */; };
-		C543823322AA6B0F00296967 /* tennis-player-playing-tennis_rightblue.png in Resources */ = {isa = PBXBuildFile; fileRef = C543823122AA6B0E00296967 /* tennis-player-playing-tennis_rightblue.png */; };
-		C543823422AA6B0F00296967 /* racket_rightblue.png in Resources */ = {isa = PBXBuildFile; fileRef = C543823222AA6B0F00296967 /* racket_rightblue.png */; };
 		C543823622AA7CCD00296967 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = C543823522AA7CCC00296967 /* star.png */; };
 		C59AD6A52238FB5F001AD7BF /* Unlogined.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C59AD6A42238FB5F001AD7BF /* Unlogined.storyboard */; };
 		C59AD6A8223BA30D001AD7BF /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = C59AD6A6223BA30C001AD7BF /* login.png */; };
@@ -33,6 +31,8 @@
 		C5DA541B219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA541A219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift */; };
 		C5DA541D219EE0690022A3B6 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA541C219EE0690022A3B6 /* JoinViewController.swift */; };
 		C5DA541F219EE0870022A3B6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA541E219EE0870022A3B6 /* Post.swift */; };
+		C5E42C5C22CF627D00570373 /* tennis-player-playing-tennis_rightblue.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E42C5A22CF627D00570373 /* tennis-player-playing-tennis_rightblue.png */; };
+		C5E42C5D22CF627D00570373 /* racket_rightblue.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E42C5B22CF627D00570373 /* racket_rightblue.png */; };
 		C5ED20632226DB0200985D38 /* 5SLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5ED20622226DB0200985D38 /* 5SLogin.storyboard */; };
 		C5ED20652226DDE900985D38 /* 5SMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5ED20642226DDE900985D38 /* 5SMain.storyboard */; };
 		C5ED206722292E1000985D38 /* EULAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ED206622292E1000985D38 /* EULAViewController.swift */; };
@@ -72,8 +72,6 @@
 		C539872F21BA86D900DAEEC8 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		C543822D22AA61A300296967 /* whitecircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whitecircle.png; path = "../../my-icons-collection/png/whitecircle.png"; sourceTree = "<group>"; };
 		C543822F22AA63CC00296967 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		C543823122AA6B0E00296967 /* tennis-player-playing-tennis_rightblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tennis-player-playing-tennis_rightblue.png"; path = "../../tennis-player-playing-tennis_rightblue.png"; sourceTree = "<group>"; };
-		C543823222AA6B0F00296967 /* racket_rightblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = racket_rightblue.png; path = ../../racket_rightblue.png; sourceTree = "<group>"; };
 		C543823522AA7CCC00296967 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = "../../TennisMatch素材/star.png"; sourceTree = "<group>"; };
 		C55AB7E921B14C0C00AD84E0 /* TennisMatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TennisMatch.entitlements; sourceTree = "<group>"; };
 		C59AD6A42238FB5F001AD7BF /* Unlogined.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Unlogined.storyboard; sourceTree = "<group>"; };
@@ -98,6 +96,8 @@
 		C5DA541A219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		C5DA541C219EE0690022A3B6 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		C5DA541E219EE0870022A3B6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		C5E42C5A22CF627D00570373 /* tennis-player-playing-tennis_rightblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tennis-player-playing-tennis_rightblue.png"; path = "../../TennisMatch素材/tennis-player-playing-tennis_rightblue.png"; sourceTree = "<group>"; };
+		C5E42C5B22CF627D00570373 /* racket_rightblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = racket_rightblue.png; path = "../../TennisMatch素材/racket_rightblue.png"; sourceTree = "<group>"; };
 		C5ED20622226DB0200985D38 /* 5SLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = 5SLogin.storyboard; sourceTree = "<group>"; };
 		C5ED20642226DDE900985D38 /* 5SMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = 5SMain.storyboard; sourceTree = "<group>"; };
 		C5ED206622292E1000985D38 /* EULAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EULAViewController.swift; sourceTree = "<group>"; };
@@ -208,9 +208,9 @@
 				C59AD6A6223BA30C001AD7BF /* login.png */,
 				C59AD6A7223BA30C001AD7BF /* refresh.png */,
 				C543822D22AA61A300296967 /* whitecircle.png */,
-				C543823222AA6B0F00296967 /* racket_rightblue.png */,
-				C543823122AA6B0E00296967 /* tennis-player-playing-tennis_rightblue.png */,
 				C543823522AA7CCC00296967 /* star.png */,
+				C5E42C5B22CF627D00570373 /* racket_rightblue.png */,
+				C5E42C5A22CF627D00570373 /* tennis-player-playing-tennis_rightblue.png */,
 				C5DA53E7219EDB960022A3B6 /* LaunchScreen.storyboard */,
 				C5DA53EA219EDB960022A3B6 /* Info.plist */,
 				C5DA540C219EDD1A0022A3B6 /* GoogleService-Info.plist */,
@@ -351,15 +351,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5E42C5C22CF627D00570373 /* tennis-player-playing-tennis_rightblue.png in Resources */,
 				C59AD6A9223BA30D001AD7BF /* refresh.png in Resources */,
+				C5E42C5D22CF627D00570373 /* racket_rightblue.png in Resources */,
 				C5DA53E9219EDB960022A3B6 /* LaunchScreen.storyboard in Resources */,
 				C59AD6A8223BA30D001AD7BF /* login.png in Resources */,
 				C5DA540D219EDD1A0022A3B6 /* GoogleService-Info.plist in Resources */,
 				C539873021BA86D900DAEEC8 /* Login.storyboard in Resources */,
 				C539872C21BA7BF000DAEEC8 /* blue-blurred-background.jpg in Resources */,
-				C543823422AA6B0F00296967 /* racket_rightblue.png in Resources */,
 				C5DA53E6219EDB960022A3B6 /* Assets.xcassets in Resources */,
-				C543823322AA6B0F00296967 /* tennis-player-playing-tennis_rightblue.png in Resources */,
 				C59AD6A52238FB5F001AD7BF /* Unlogined.storyboard in Resources */,
 				C5ED20652226DDE900985D38 /* 5SMain.storyboard in Resources */,
 				C543823622AA7CCD00296967 /* star.png in Resources */,

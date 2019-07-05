@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zgO-jc-XIV">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,23 +51,44 @@
                                     <segue destination="azc-Of-gX1" kind="show" id="wsq-Qb-HgF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fC-UR-5Cd">
+                                <rect key="frame" x="91" y="442" width="138" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="CKO-nv-zQ2"/>
+                                    <constraint firstAttribute="height" constant="30" id="F8R-aw-EQ7"/>
+                                </constraints>
+                                <state key="normal" title="ログインせずに使う"/>
+                                <connections>
+                                    <segue destination="Kr3-yd-tOI" kind="show" id="6Bo-Pf-sOX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ebm-hK-kBp" firstAttribute="bottom" secondItem="ULs-QE-Ugt" secondAttribute="bottom" constant="20" id="26L-KP-j1m"/>
                             <constraint firstItem="bsd-wE-eMD" firstAttribute="centerX" secondItem="Rfc-p3-ACg" secondAttribute="centerX" id="Go9-4U-zMP"/>
+                            <constraint firstItem="9fC-UR-5Cd" firstAttribute="centerX" secondItem="Rfc-p3-ACg" secondAttribute="centerX" id="ed0-eP-GeQ"/>
+                            <constraint firstItem="bsd-wE-eMD" firstAttribute="top" secondItem="9fC-UR-5Cd" secondAttribute="bottom" constant="8" id="hOd-Yo-FDn"/>
                             <constraint firstItem="ULs-QE-Ugt" firstAttribute="top" secondItem="bsd-wE-eMD" secondAttribute="bottom" constant="8" id="hVT-lG-HKg"/>
                             <constraint firstItem="ULs-QE-Ugt" firstAttribute="centerX" secondItem="Rfc-p3-ACg" secondAttribute="centerX" id="oOw-QG-Bow"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ebm-hK-kBp"/>
                     </view>
                     <connections>
-                        <segue destination="9Sf-ba-6lL" kind="push" identifier="toUserNameView" id="wWC-DQ-5eg"/>
+                        <segue destination="9Sf-ba-6lL" kind="show" identifier="toUserNameView" id="LmD-e7-Gdw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9q-Tz-YCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="16.875" y="128.87323943661971"/>
+        </scene>
+        <!--Unlogined-->
+        <scene sceneID="fY5-el-eIn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Unlogined" id="Kr3-yd-tOI" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aiV-KM-fpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="498" y="276"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="DYE-uu-9TJ">
@@ -80,7 +101,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bmu-LP-yQz">
                                 <rect key="frame" x="0.0" y="60" width="320" height="508"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">This End-User License Agreement ("EULA") is a legal agreement between you and my app.
+                                <string key="text">This End-User License Agreement ("EULA") is a legal agreement between you and my app.
 
 This EULA agreement governs your acquisition and use of our TennisMatch software ("Software") directly from My Company or indirectly through a My Company authorized reseller or distributor (a "Reseller").
 
@@ -121,7 +142,7 @@ It will also terminate immediately if you fail to comply with any term of this E
 
 Governing Law
 
-This EULA agreement, and any dispute arising out of or in connection with this EULA agreement, shall be governed by and construed in accordance with the laws of My Country.</mutableString>
+This EULA agreement, and any dispute arising out of or in connection with this EULA agreement, shall be governed by and construed in accordance with the laws of My Country.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -168,7 +189,7 @@ This EULA agreement, and any dispute arising out of or in connection with this E
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P5B-Fr-UMS">
                                 <rect key="frame" x="0.0" y="60" width="320" height="508"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">本アプリ上で提供するサービスにおけるプライバシー情報の取扱いについて，以下のとおりプライバシーポリシーを定めます。
+                                <string key="text">本アプリ上で提供するサービスにおけるプライバシー情報の取扱いについて，以下のとおりプライバシーポリシーを定めます。
 
 
  
@@ -198,7 +219,7 @@ This EULA agreement, and any dispute arising out of or in connection with this E
 （3）公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって，本人の同意を得ることが困難であるとき
 
 （4）国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって，本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

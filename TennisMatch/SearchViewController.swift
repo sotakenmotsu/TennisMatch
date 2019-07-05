@@ -121,14 +121,20 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             } else {
                 print(favorite)
                 print(numberArray)
+                var fal: Bool = false
                 for i in favorite {
                     if i == numberArray[indexPath.row] {
                         favoriteArray.append(true)
                         cell.favoriteMark.isHidden = false
+                        fal = true
                     } else {
-                        favoriteArray.append(false)
-                        cell.favoriteMark.isHidden = true
+//                        favoriteArray.append(false)
+//                        cell.favoriteMark.isHidden = true
                     }
+                }
+                if fal == false {
+                    favoriteArray.append(false)
+                    cell.favoriteMark.isHidden = true
                 }
                 print(favoriteArray)
             }

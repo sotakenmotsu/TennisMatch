@@ -660,7 +660,7 @@
                                     <constraint firstAttribute="width" constant="193" id="YnG-Z0-0VJ"/>
                                     <constraint firstAttribute="height" constant="63" id="vFO-iz-dW6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="お気に入り">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
