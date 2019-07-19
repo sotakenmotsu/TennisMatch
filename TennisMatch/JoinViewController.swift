@@ -1,10 +1,3 @@
-//
-//  JoinViewController.swift
-//  TennisMatch
-//
-//  Created by 剱物蒼太 on 2018/11/16.
-//  Copyright © 2018年 剱物蒼太. All rights reserved.
-//
 
 import UIKit
 
@@ -24,7 +17,7 @@ class JoinViewController: UIViewController {
     @IBOutlet var favoriteButton: UIButton!
     var isFaved: Bool!
     var favoriteArray: [Int] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +30,6 @@ class JoinViewController: UIViewController {
         levelLabel.text = post[5]
         commentLabel.text = post[6]
         gmailLabel.text = post[7]
-        
         favoriteArray = userDefaults.array(forKey: "favorite") as! [Int]
         if !isFaved {
             favoriteButton.setTitle("お気に入り", for: .normal)
@@ -46,9 +38,6 @@ class JoinViewController: UIViewController {
             favoriteButton.setTitle("お気に入り解除", for: .normal)
             favoriteButton.setTitleColor(UIColor.white, for: .normal)
         }
-
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func favoButton() {
@@ -58,22 +47,26 @@ class JoinViewController: UIViewController {
             self.deletefavorite()
         }
     }
-
+    
     func favorite() {
         if userDefaults.object(forKey: "favorite") == nil {
             let favorite: [Int] = [postnumber]
-            userDefaults.set(favorite, forKey: "favorite")
+            userDefaults.set(favorite,
+                             forKey: "favorite")
             userDefaults.synchronize()
         } else {
             var favorite: [Int] = userDefaults.array(forKey: "favorite") as! [Int]
             favorite.append(postnumber)
             userDefaults.removeObject(forKey: "favorite")
-            userDefaults.set(favorite, forKey: "favorite")
+            userDefaults.set(favorite,
+                             forKey: "favorite")
             userDefaults.synchronize()
         }
         isFaved = true
-        favoriteButton.setTitle("お気に入り解除", for: .normal)
-        favoriteButton.setTitleColor(UIColor.white, for: .normal)
+        favoriteButton.setTitle("お気に入り解除",
+                                for: .normal)
+        favoriteButton.setTitleColor(UIColor.white,
+                                     for: .normal)
     }
     
     func deletefavorite() {
@@ -85,13 +78,14 @@ class JoinViewController: UIViewController {
             }
         }
         userDefaults.removeObject(forKey: "favorite")
-        userDefaults.set(newfavorite, forKey: "favorite")
+        userDefaults.set(newfavorite,
+                         forKey: "favorite")
         userDefaults.synchronize()
         isFaved = false
-        favoriteButton.setTitle("お気に入り", for: .normal)
-        favoriteButton.setTitleColor(UIColor.white, for: .normal)
+        favoriteButton.setTitle("お気に入り",
+                                for: .normal)
+        favoriteButton.setTitleColor(UIColor.white,
+                                     for: .normal)
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//    }
 }

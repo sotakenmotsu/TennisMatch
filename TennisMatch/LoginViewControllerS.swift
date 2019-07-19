@@ -7,18 +7,18 @@ import FirebaseAuth
 
 class LoginViewControllerS: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate, GIDSignInDelegate {
     
-//    var myUser: User!
-
+    //    var myUser: User!
+    
     let userDefaults = UserDefaults.standard
     var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        myUser = Auth.auth().currentUser
+        //        myUser = Auth.auth().currentUser
         GIDSignIn.sharedInstance()?.uiDelegate = self
         GIDSignIn.sharedInstance()?.delegate = self
-//        ref = Database.database().reference()
+        //        ref = Database.database().reference()
     }
     
     @IBAction func tapGoogleSignIn(_ sender: Any) {
@@ -36,11 +36,11 @@ class LoginViewControllerS: UIViewController, UITextFieldDelegate, GIDSignInUIDe
                                       preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "OK",
                                style: UIAlertAction.Style.default) {(action: UIAlertAction) in
-            let uuid = UUID().uuidString
-            print(uuid)
-            self.userDefaults.set(uuid,
-                                  forKey: "uuid")
-            self.toUserNameView()
+                                let uuid = UUID().uuidString
+                                print(uuid)
+                                self.userDefaults.set(uuid,
+                                                      forKey: "uuid")
+                                self.toUserNameView()
         }
         alert.addAction(ok)
         present(alert,

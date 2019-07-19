@@ -17,7 +17,6 @@
 		C543823622AA7CCD00296967 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = C543823522AA7CCC00296967 /* star.png */; };
 		C59AD6A52238FB5F001AD7BF /* Unlogined.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C59AD6A42238FB5F001AD7BF /* Unlogined.storyboard */; };
 		C59AD6A8223BA30D001AD7BF /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = C59AD6A6223BA30C001AD7BF /* login.png */; };
-		C59AD6A9223BA30D001AD7BF /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = C59AD6A7223BA30C001AD7BF /* refresh.png */; };
 		C5DA53DF219EDB950022A3B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA53DE219EDB950022A3B6 /* AppDelegate.swift */; };
 		C5DA53E4219EDB950022A3B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5DA53E2219EDB950022A3B6 /* Main.storyboard */; };
 		C5DA53E6219EDB960022A3B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5DA53E5219EDB960022A3B6 /* Assets.xcassets */; };
@@ -31,13 +30,12 @@
 		C5DA541B219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA541A219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift */; };
 		C5DA541D219EE0690022A3B6 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA541C219EE0690022A3B6 /* JoinViewController.swift */; };
 		C5DA541F219EE0870022A3B6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DA541E219EE0870022A3B6 /* Post.swift */; };
-		C5E42C5C22CF627D00570373 /* tennis-player-playing-tennis_rightblue.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E42C5A22CF627D00570373 /* tennis-player-playing-tennis_rightblue.png */; };
 		C5E42C5D22CF627D00570373 /* racket_rightblue.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E42C5B22CF627D00570373 /* racket_rightblue.png */; };
+		C5E42C6522E1E3A000570373 /* tennis-player-playing-tennis_rightblue.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E42C6422E1E3A000570373 /* tennis-player-playing-tennis_rightblue.png */; };
 		C5ED20632226DB0200985D38 /* 5SLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5ED20622226DB0200985D38 /* 5SLogin.storyboard */; };
 		C5ED20652226DDE900985D38 /* 5SMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5ED20642226DDE900985D38 /* 5SMain.storyboard */; };
 		C5ED206722292E1000985D38 /* EULAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ED206622292E1000985D38 /* EULAViewController.swift */; };
 		C5ED2069222932F700985D38 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ED2068222932F700985D38 /* PrivacyViewController.swift */; };
-		C5F831FD21E8989F0048AEFF /* TestLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F831FC21E8989F0048AEFF /* TestLoginViewController.swift */; };
 		C5F831FF21E8B14A0048AEFF /* LoginViewControllerS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F831FE21E8B14A0048AEFF /* LoginViewControllerS.swift */; };
 		DFDBDB84A63F8B256F923147 /* Pods_TennisMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6364B585C1B103359F92075 /* Pods_TennisMatch.framework */; };
 /* End PBXBuildFile section */
@@ -76,7 +74,6 @@
 		C55AB7E921B14C0C00AD84E0 /* TennisMatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TennisMatch.entitlements; sourceTree = "<group>"; };
 		C59AD6A42238FB5F001AD7BF /* Unlogined.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Unlogined.storyboard; sourceTree = "<group>"; };
 		C59AD6A6223BA30C001AD7BF /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login.png; path = "../../TennisMatch素材/login.png"; sourceTree = "<group>"; };
-		C59AD6A7223BA30C001AD7BF /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refresh.png; path = "../../TennisMatch素材/refresh.png"; sourceTree = "<group>"; };
 		C5DA53DB219EDB950022A3B6 /* TennisMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TennisMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DA53DE219EDB950022A3B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5DA53E3219EDB950022A3B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,13 +93,12 @@
 		C5DA541A219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTableViewCell.swift; sourceTree = "<group>"; };
 		C5DA541C219EE0690022A3B6 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		C5DA541E219EE0870022A3B6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		C5E42C5A22CF627D00570373 /* tennis-player-playing-tennis_rightblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tennis-player-playing-tennis_rightblue.png"; path = "../../TennisMatch素材/tennis-player-playing-tennis_rightblue.png"; sourceTree = "<group>"; };
 		C5E42C5B22CF627D00570373 /* racket_rightblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = racket_rightblue.png; path = "../../TennisMatch素材/racket_rightblue.png"; sourceTree = "<group>"; };
+		C5E42C6422E1E3A000570373 /* tennis-player-playing-tennis_rightblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tennis-player-playing-tennis_rightblue.png"; path = "../../TennisMatch素材/tennis-player-playing-tennis_rightblue.png"; sourceTree = "<group>"; };
 		C5ED20622226DB0200985D38 /* 5SLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = 5SLogin.storyboard; sourceTree = "<group>"; };
 		C5ED20642226DDE900985D38 /* 5SMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = 5SMain.storyboard; sourceTree = "<group>"; };
 		C5ED206622292E1000985D38 /* EULAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EULAViewController.swift; sourceTree = "<group>"; };
 		C5ED2068222932F700985D38 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
-		C5F831FC21E8989F0048AEFF /* TestLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoginViewController.swift; sourceTree = "<group>"; };
 		C5F831FE21E8B14A0048AEFF /* LoginViewControllerS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerS.swift; sourceTree = "<group>"; };
 		EF1889851E0116FE6415377F /* Pods-TennisMatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisMatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisMatch/Pods-TennisMatch.release.xcconfig"; sourceTree = "<group>"; };
 		F6364B585C1B103359F92075 /* Pods_TennisMatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisMatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,15 +198,13 @@
 				C5DA541A219EE04C0022A3B6 /* SearchViewControllerTableViewCell.swift */,
 				C5DA541C219EE0690022A3B6 /* JoinViewController.swift */,
 				C5DA541E219EE0870022A3B6 /* Post.swift */,
-				C5F831FC21E8989F0048AEFF /* TestLoginViewController.swift */,
 				C5DA53E5219EDB960022A3B6 /* Assets.xcassets */,
 				C539872B21BA7BF000DAEEC8 /* blue-blurred-background.jpg */,
 				C59AD6A6223BA30C001AD7BF /* login.png */,
-				C59AD6A7223BA30C001AD7BF /* refresh.png */,
 				C543822D22AA61A300296967 /* whitecircle.png */,
 				C543823522AA7CCC00296967 /* star.png */,
 				C5E42C5B22CF627D00570373 /* racket_rightblue.png */,
-				C5E42C5A22CF627D00570373 /* tennis-player-playing-tennis_rightblue.png */,
+				C5E42C6422E1E3A000570373 /* tennis-player-playing-tennis_rightblue.png */,
 				C5DA53E7219EDB960022A3B6 /* LaunchScreen.storyboard */,
 				C5DA53EA219EDB960022A3B6 /* Info.plist */,
 				C5DA540C219EDD1A0022A3B6 /* GoogleService-Info.plist */,
@@ -351,11 +345,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5E42C5C22CF627D00570373 /* tennis-player-playing-tennis_rightblue.png in Resources */,
-				C59AD6A9223BA30D001AD7BF /* refresh.png in Resources */,
 				C5E42C5D22CF627D00570373 /* racket_rightblue.png in Resources */,
 				C5DA53E9219EDB960022A3B6 /* LaunchScreen.storyboard in Resources */,
 				C59AD6A8223BA30D001AD7BF /* login.png in Resources */,
+				C5E42C6522E1E3A000570373 /* tennis-player-playing-tennis_rightblue.png in Resources */,
 				C5DA540D219EDD1A0022A3B6 /* GoogleService-Info.plist in Resources */,
 				C539873021BA86D900DAEEC8 /* Login.storyboard in Resources */,
 				C539872C21BA7BF000DAEEC8 /* blue-blurred-background.jpg in Resources */,
@@ -498,7 +491,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5DA5417219EE00A0022A3B6 /* PostViewController.swift in Sources */,
-				C5F831FD21E8989F0048AEFF /* TestLoginViewController.swift in Sources */,
 				C5F831FF21E8B14A0048AEFF /* LoginViewControllerS.swift in Sources */,
 				C5DA5419219EE0240022A3B6 /* SearchViewController.swift in Sources */,
 				C5191B4521EB73000013A7C4 /* UserNameViewController.swift in Sources */,

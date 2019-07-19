@@ -5,7 +5,7 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class PostViewController: UIViewController {
-
+    
     @IBOutlet var placeView: UILabel!
     @IBOutlet var dateView: UILabel!
     @IBOutlet var starttimeView: UILabel!
@@ -49,16 +49,16 @@ class PostViewController: UIViewController {
         let postername = post[7]
         let gmail = post[8]
         ref.child("data").child("\(self.count + 1)").setValue(["place":place,
-                                                    "date":date,
-                                                    "startTime":starttime,
-                                                    "endTime":endtime,
-                                                    "member":member,
-                                                    "level":level,
-                                                    "comment":comment,
-                                                    "postdate":dateformatter.string(from: now),
-                                                    "postername":postername,
-                                                    "gmail":gmail,
-                                                    "postnumber":String(self.count + 1)])
+                                                               "date":date,
+                                                               "startTime":starttime,
+                                                               "endTime":endtime,
+                                                               "member":member,
+                                                               "level":level,
+                                                               "comment":comment,
+                                                               "postdate":dateformatter.string(from: now),
+                                                               "postername":postername,
+                                                               "gmail":gmail,
+                                                               "postnumber":String(self.count + 1)])
         self.showAlert()
     }
     
@@ -68,7 +68,7 @@ class PostViewController: UIViewController {
                                       preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "OK",
                                style: UIAlertAction.Style.default) {(action: UIAlertAction) in
-            self.navigationController!.popViewController(animated: true)
+                                self.navigationController!.popViewController(animated: true)
         }
         alert.addAction(ok)
         present(alert,

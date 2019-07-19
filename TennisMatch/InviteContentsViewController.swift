@@ -21,7 +21,7 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
     var end: Int = 0
     let dateformatter = DateFormatter()
     let userDefaults = UserDefaults.standard
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

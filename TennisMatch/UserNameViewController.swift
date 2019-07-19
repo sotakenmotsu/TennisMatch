@@ -10,7 +10,7 @@ class UserNameViewController: UIViewController {
     var ref: DatabaseReference!
     let userDefaults = UserDefaults.standard
     let user = Auth.auth().currentUser
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +22,7 @@ class UserNameViewController: UIViewController {
         }
         print(userDefaults.string(forKey: "myGmail")!)
         print(userDefaults.string(forKey: "uuid")!)
-
+        
     }
     
     @IBAction func decideButton() {
@@ -39,12 +39,12 @@ class UserNameViewController: UIViewController {
                                       preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "OK",
                                style: UIAlertAction.Style.default) {(action: UIAlertAction) in
-            self.userDefaults.set(self.usernameTextField.text!,
-                                  forKey: "username")
-            self.toMainView()
-        let cancel = UIAlertAction(title: "キャンセル",
-                                   style: UIAlertAction.Style.cancel,
-                                   handler: nil)
+                                self.userDefaults.set(self.usernameTextField.text!,
+                                                      forKey: "username")
+                                self.toMainView()
+                                let cancel = UIAlertAction(title: "キャンセル",
+                                                           style: UIAlertAction.Style.cancel,
+                                                           handler: nil)
         }
         alert.addAction(ok)
         present(alert,
@@ -74,5 +74,5 @@ class UserNameViewController: UIViewController {
                               sender: nil)
         }
     }
-
+    
 }

@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     var window: UIWindow?
     let userDefaults = UserDefaults.standard
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let display: CGRect = UIScreen.main.bounds
@@ -33,16 +33,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 }
             }
         } else {
-                    if userDefaults.object(forKey: "idToken") != nil {
-                        if userDefaults.object(forKey: "accessToken") != nil {
-                            self.window = UIWindow(frame: UIScreen.main.bounds)
-                            let storyboard = UIStoryboard(name: "Main",
-                                                          bundle: nil)
-                            let initialViewController = storyboard.instantiateViewController(withIdentifier: "mainView")
-                            self.window?.rootViewController = initialViewController
-                            self.window?.makeKeyAndVisible()
-                        }
-                    }
+            if userDefaults.object(forKey: "idToken") != nil {
+                if userDefaults.object(forKey: "accessToken") != nil {
+                    self.window = UIWindow(frame: UIScreen.main.bounds)
+                    let storyboard = UIStoryboard(name: "Main",
+                                                  bundle: nil)
+                    let initialViewController = storyboard.instantiateViewController(withIdentifier: "mainView")
+                    self.window?.rootViewController = initialViewController
+                    self.window?.makeKeyAndVisible()
+                }
+            }
         }
         
         if #available(iOS 10.0, *) {
