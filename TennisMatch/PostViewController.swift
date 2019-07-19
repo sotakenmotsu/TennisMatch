@@ -1,10 +1,3 @@
-//
-//  PostViewController.swift
-//  TennisMatch
-//
-//  Created by 剱物蒼太 on 2018/11/16.
-//  Copyright © 2018年 剱物蒼太. All rights reserved.
-//
 
 import UIKit
 import Firebase
@@ -39,9 +32,6 @@ class PostViewController: UIViewController {
         commentView.text = post[6]
         ref = Database.database().reference()
         dateformatter.dateFormat = "yyyy-MM-dd"
-
-        // Do any additional setup after loading the view.
-        
         ref.child("data").observe(.value, with: {(snapshot) in
             self.count = Int(snapshot.childrenCount)
             print(self.count)
@@ -49,7 +39,6 @@ class PostViewController: UIViewController {
     }
     
     @IBAction func postButton() {
-    
         let place = post[0]
         let date = post[1]
         let starttime = post[2]
@@ -59,14 +48,6 @@ class PostViewController: UIViewController {
         let comment = post[6]
         let postername = post[7]
         let gmail = post[8]
-//        ref.child("data").observe(.value, with: { (snapshot) in
-//
-//            for itemsnapshot in snapshot.children {
-//                let place = Post(snapshot: itemsnapshot as! DataSnapshot)?.place as! String
-//                self.post.append(place)
-//                print(self.post)
-//            }
-//        })
         ref.child("data").child("\(self.count + 1)").setValue(["place":place,
                                                     "date":date,
                                                     "startTime":starttime,
@@ -82,11 +63,17 @@ class PostViewController: UIViewController {
     }
     
     func showAlert() {
-        let alert = UIAlertController(title: "投稿完了！", message:"", preferredStyle: UIAlertController.Style.alert)
-        let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default){ (action: UIAlertAction) in
+        let alert = UIAlertController(title: "投稿完了！",
+                                      message:"",
+                                      preferredStyle: UIAlertController.Style.alert)
+        let ok = UIAlertAction(title: "OK",
+                               style: UIAlertAction.Style.default) {(action: UIAlertAction) in
             self.navigationController!.popViewController(animated: true)
         }
         alert.addAction(ok)
-        present(alert, animated: true, completion: nil)
+        present(alert,
+                animated: true,
+                completion: nil)
     }
+    
 }

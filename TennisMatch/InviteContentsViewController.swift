@@ -1,10 +1,3 @@
-//
-//  InviteContentsViewController.swift
-//  TennisMatch
-//
-//  Created by 剱物蒼太 on 2018/11/16.
-//  Copyright © 2018年 剱物蒼太. All rights reserved.
-//
 
 import UIKit
 
@@ -27,7 +20,6 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
     var endPickerView: UIPickerView = UIPickerView()
     var end: Int = 0
     let dateformatter = DateFormatter()
-    
     let userDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
@@ -37,10 +29,19 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
         datePicker.timeZone = NSTimeZone.local
         datePicker.locale = Locale.current
         dateTextField.inputView = datePicker
-        let datetoolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
-        let specialItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(InviteContentsViewController.done))
-        datetoolbar.setItems([specialItem, doneItem], animated: true)
+        let datetoolbar = UIToolbar(frame: CGRect(x: 0,
+                                                  y: 0,
+                                                  width: view.frame.size.width,
+                                                  height: 35))
+        let specialItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                          target: self,
+                                          action: nil)
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done,
+                                       target: self,
+                                       action: #selector(InviteContentsViewController.done))
+        datetoolbar.setItems([specialItem,
+                              doneItem],
+                             animated: true)
         placeTextField.delegate = self
         dateTextField.inputView = datePicker
         memberPickerView.delegate = self
@@ -55,10 +56,19 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
         endPickerView.delegate = self
         endPickerView.dataSource = self
         endPickerView.showsSelectionIndicator = true
-        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
-        let normaldoneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(InviteContentsViewController.normaldone))
-        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(InviteContentsViewController.cancel))
-        toolbar.setItems([cancelItem, doneItem], animated: true)
+        let toolbar = UIToolbar(frame: CGRect(x: 0,
+                                              y: 0,
+                                              width: view.frame.size.width,
+                                              height: 35))
+        let normaldoneItem = UIBarButtonItem(barButtonSystemItem: .done,
+                                             target: self,
+                                             action: #selector(InviteContentsViewController.normaldone))
+        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel,
+                                         target: self,
+                                         action: #selector(InviteContentsViewController.cancel))
+        toolbar.setItems([cancelItem,
+                          doneItem],
+                         animated: true)
         self.dateTextField.inputAccessoryView = toolbar
         self.memberTextField.inputView = memberPickerView
         self.memberTextField.inputAccessoryView = toolbar
@@ -69,14 +79,13 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
         self.endTimeTextField.inputView = endPickerView
         self.endTimeTextField.inputAccessoryView = toolbar
         commentView.delegate = self
-        
         dateformatter.dateFormat = "yyyy-MM-dd"
-
-        // Do any additional setup after loading the view.
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         placeTextField.text = ""
         dateTextField.text = ""
         memberTextField.text = ""
@@ -144,11 +153,11 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == levelPickerView {
             return "Lv.\(row)"
-        }else if pickerView == memberPickerView{
+        } else if pickerView == memberPickerView {
             return "\(row)人"
-        }else if pickerView == startPickerView{
+        } else if pickerView == startPickerView {
             return "\(row+8)時"
-        }else{
+        } else {
             return "\(row+8)時"
         }
     }
@@ -157,22 +166,27 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
         if pickerView == levelPickerView {
             self.levelTextField.text = "Lv.\(row)"
             self.level = row
-        }else if pickerView == memberPickerView {
+        } else if pickerView == memberPickerView {
             self.memberTextField.text = "\(row)人"
             self.member = row
-        }else if pickerView == startPickerView {
+        } else if pickerView == startPickerView {
             self.startTimeTextField.text = "\(row+8)時"
             self.start = row
-        }else{
+        } else {
             self.endTimeTextField.text = "\(row+8)時"
             self.end = row
         }
     }
     
     func showalert() {
-        let alert: UIAlertController = UIAlertController(title: "未記入の場所があります", message: "入力してください", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default))
-        self.present(alert, animated: true, completion: nil)
+        let alert: UIAlertController = UIAlertController(title: "未記入の場所があります",
+                                                         message: "入力してください",
+                                                         preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK",
+                                      style: UIAlertAction.Style.default))
+        self.present(alert,
+                     animated: true,
+                     completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -199,7 +213,6 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
             self.showalert()
         }else{
             var post = [String]()
-//            let randomid = String(arc4random_uniform(1000))
             post.append(placeTextField.text!)
             post.append(dateTextField.text!)
             post.append(startTimeTextField.text!)
@@ -209,7 +222,8 @@ class InviteContentsViewController: UIViewController, UIPickerViewDelegate, UIPi
             post.append(commentView.text!)
             post.append(userDefaults.string(forKey: "username")!)
             post.append(userDefaults.string(forKey: "myGmail")!)
-            self.performSegue(withIdentifier: "toPostViewController", sender: post)
+            self.performSegue(withIdentifier: "toPostViewController",
+                              sender: post)
         }
     }
 }
