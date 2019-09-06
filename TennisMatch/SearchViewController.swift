@@ -19,8 +19,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     var favorite: [Int] = []
     var favoriteArray: [Bool] = []
     var numberArray: [Int] = []
-    var rposts = [[String]]()
-    var rnumberArray: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,8 +54,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                                             self.numberArray.append(Int(postnumber)!)
                                             print(self.posts)
                                         }
-                                        self.rposts = Array(self.posts.reversed())
-                                        self.rnumberArray = Array(self.numberArray.reversed())
                                         self.tableView.reloadData()
                                         SVProgressHUD.dismiss()
             })
