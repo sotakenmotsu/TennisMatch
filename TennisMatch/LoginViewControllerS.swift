@@ -15,14 +15,13 @@ class LoginViewControllerS: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        myUser = Auth.auth().currentUser
         GIDSignIn.sharedInstance()?.uiDelegate = self
         GIDSignIn.sharedInstance()?.delegate = self
-        //        ref = Database.database().reference()
+        
     }
     
     @IBAction func tapGoogleSignIn(_ sender: Any) {
-        GIDSignIn.sharedInstance()?.signIn()
+//        GIDSignIn.sharedInstance()?.signIn()
     }
     
     func toUserNameView() {
@@ -71,5 +70,8 @@ class LoginViewControllerS: UIViewController, UITextFieldDelegate, GIDSignInUIDe
     
     func sign(_ signIn: GIDSignIn!, didDesconnectWith user: GIDGoogleUser!, withError error: Error!) {
         print("Sign off successfully")
+    }
+    
+    @IBAction func backloginfromunlogin(segue: UIStoryboardSegue) {
     }
 }

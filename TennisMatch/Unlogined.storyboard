@@ -59,15 +59,24 @@
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="DNx-FX-bkv">
+                                                    <rect key="frame" x="325" y="11" width="35" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="35" id="pWi-x8-UUp"/>
+                                                        <constraint firstAttribute="height" constant="35" id="tZE-Jo-pZ9"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="pRN-JS-M9K" secondAttribute="bottom" constant="2" id="89b-gi-Zax"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="epB-E8-ghM" secondAttribute="bottom" constant="2" id="Eph-XW-6nP"/>
+                                                <constraint firstItem="DNx-FX-bkv" firstAttribute="top" secondItem="ZAx-Ln-fRu" secondAttribute="topMargin" id="Qv2-gT-g9F"/>
                                                 <constraint firstItem="xrm-eE-lY4" firstAttribute="leading" secondItem="epB-E8-ghM" secondAttribute="trailing" constant="44" id="U5K-Kz-GSU"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="JVX-md-N82" secondAttribute="bottom" id="a4O-dU-4Rb"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="JVX-md-N82" secondAttribute="trailing" id="d6i-l7-G0x"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="xrm-eE-lY4" secondAttribute="bottom" constant="2" id="fqA-Fb-CAH"/>
                                                 <constraint firstItem="epB-E8-ghM" firstAttribute="leading" secondItem="pRN-JS-M9K" secondAttribute="trailing" constant="44" id="gMt-Us-6kR"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="DNx-FX-bkv" secondAttribute="trailing" id="iXY-h4-3bP"/>
                                                 <constraint firstItem="GdD-od-IwX" firstAttribute="leading" secondItem="ZAx-Ln-fRu" secondAttribute="leadingMargin" constant="8" id="jjA-b7-0aj"/>
                                                 <constraint firstItem="pRN-JS-M9K" firstAttribute="leading" secondItem="GdD-od-IwX" secondAttribute="leading" id="mzj-cS-l7y"/>
                                                 <constraint firstItem="GdD-od-IwX" firstAttribute="top" secondItem="ZAx-Ln-fRu" secondAttribute="topMargin" id="pMX-D4-JTH"/>
@@ -76,6 +85,7 @@
                                         <connections>
                                             <outlet property="dateLabel" destination="JVX-md-N82" id="LSN-ae-wKh"/>
                                             <outlet property="endLabel" destination="xrm-eE-lY4" id="5va-1r-TJd"/>
+                                            <outlet property="favoriteMark" destination="DNx-FX-bkv" id="eFR-tf-wgM"/>
                                             <outlet property="placeLabel" destination="GdD-od-IwX" id="RZ7-3L-7ay"/>
                                             <outlet property="startLabel" destination="pRN-JS-M9K" id="OtA-Nh-puK"/>
                                         </connections>
@@ -92,13 +102,28 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xyf-4p-hYY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="探す" id="TmP-Oq-SiF"/>
+                    <navigationItem key="navigationItem" title="探す" id="TmP-Oq-SiF">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="qZe-c6-uX3">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="McF-WR-IdT">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="ログイン">
+                                    <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <connections>
+                                <segue destination="MBP-QU-ELd" kind="unwind" unwindAction="backloginfromunloginWithSegue:" id="rXG-pD-mgY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="wr4-YL-A5b" id="38R-jn-dz6"/>
                         <segue destination="lXS-xc-JJC" kind="push" identifier="toJoinViewController" id="zsh-9I-deE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAu-L4-c0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="MBP-QU-ELd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1056.8" y="97.601199400299862"/>
         </scene>
@@ -210,11 +235,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGH-vd-jG5">
+                                <rect key="frame" x="91" y="584" width="193" height="63"/>
+                                <color key="backgroundColor" red="0.53333333329999999" green="0.74901960779999999" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="AfB-xA-gQd"/>
+                                    <constraint firstAttribute="width" constant="193" id="xPu-qM-fP7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="utr-VN-JAy" firstAttribute="top" secondItem="fj3-xe-zdB" secondAttribute="bottom" constant="16" id="1Tl-Qd-485"/>
                             <constraint firstItem="6I8-gA-apP" firstAttribute="leading" secondItem="o47-hX-eD4" secondAttribute="leading" id="F8S-O0-IlJ"/>
+                            <constraint firstItem="YGH-vd-jG5" firstAttribute="centerX" secondItem="RkO-jD-2x6" secondAttribute="centerX" id="HMw-oJ-KW5"/>
                             <constraint firstItem="YsQ-Iz-yZ9" firstAttribute="centerY" secondItem="Sb9-QP-o07" secondAttribute="centerY" id="IgW-xC-IDn"/>
                             <constraint firstItem="utr-VN-JAy" firstAttribute="centerX" secondItem="RkO-jD-2x6" secondAttribute="centerX" id="KBt-AG-Vda"/>
                             <constraint firstItem="q66-HA-aQa" firstAttribute="leading" secondItem="o47-hX-eD4" secondAttribute="leading" id="LMQ-YD-Qjq"/>
@@ -241,6 +279,7 @@
                             <constraint firstItem="o47-hX-eD4" firstAttribute="top" secondItem="bXS-lg-np3" secondAttribute="top" constant="33" id="oj4-mA-3pd"/>
                             <constraint firstItem="LqL-zm-JrG" firstAttribute="trailing" secondItem="PIA-hj-0qn" secondAttribute="trailing" id="qEH-sj-tmQ"/>
                             <constraint firstItem="MX3-ap-0qX" firstAttribute="centerY" secondItem="Sb9-QP-o07" secondAttribute="centerY" id="rH6-eB-2en"/>
+                            <constraint firstItem="bXS-lg-np3" firstAttribute="bottom" secondItem="YGH-vd-jG5" secondAttribute="bottom" constant="20" id="sU7-xk-kxq"/>
                             <constraint firstItem="1Df-GJ-6GX" firstAttribute="trailing" secondItem="PIA-hj-0qn" secondAttribute="trailing" id="whp-Cv-EOx"/>
                             <constraint firstItem="fj3-xe-zdB" firstAttribute="centerX" secondItem="B3d-rR-0y2" secondAttribute="centerX" id="wkR-dj-EvM"/>
                             <constraint firstItem="MU5-68-IQb" firstAttribute="top" secondItem="Sb9-QP-o07" secondAttribute="bottom" constant="26" id="yyx-ea-R6q"/>
@@ -253,6 +292,7 @@
                         <outlet property="commentLabel" destination="utr-VN-JAy" id="sM2-fZ-cze"/>
                         <outlet property="dateLabel" destination="q66-HA-aQa" id="ZoH-Vt-TRF"/>
                         <outlet property="endtimeLabel" destination="YsQ-Iz-yZ9" id="81K-ML-LCs"/>
+                        <outlet property="favoriteButton" destination="YGH-vd-jG5" id="0cc-rT-4dN"/>
                         <outlet property="gmailLabel" destination="6I8-gA-apP" id="E7S-o2-4vB"/>
                         <outlet property="levelLabel" destination="f4J-MK-5Gw" id="8ui-y2-LLX"/>
                         <outlet property="memberLabel" destination="MU5-68-IQb" id="1z4-Pv-eFd"/>
@@ -288,4 +328,7 @@
             <point key="canvasLocation" x="117.59999999999999" y="97.601199400299862"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="star" width="512" height="512"/>
+    </resources>
 </document>
